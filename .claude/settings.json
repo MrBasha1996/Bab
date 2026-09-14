@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"/c/Users/HP/Bab\" 2>&1; echo \"---\"; ls -la \"/c/Users/HP\" | grep -i bab)",
+      "Read(//c/Users/HP/**)",
+      "Bash(echo \"=== BabApp ===\"; ls -la \"/c/Users/HP/BabApp\" 2>&1 | head -50; echo \"=== package.json check ===\"; find \"/c/Users/HP/BabApp\" -maxdepth 1 -name \"package.json\" 2>&1; echo \"=== Bab/.claude ===\"; find \"/c/Users/HP/Bab/.claude\" -maxdepth 3 2>&1)",
+      "Read(//c/Users/HP/BabApp/**)",
+      "Read(//c/Users/HP/BabApp/apps/**)",
+      "Read(//c/Users/HP/BabApp/backend/**)",
+      "Read(//c/Users/HP/BabApp/packages/**)",
+      "Read(//c/Users/HP/BabApp/tasks/**)",
+      "Read(//c/Users/HP/BabApp/backend/src/**)",
+      "Read(//c/Users/HP/BabApp/apps/web-ordering/**)",
+      "Read(//c/Users/HP/BabApp/apps/mobile/**)",
+      "Bash(npm -v)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias \"@/*\" --use-npm --turbopack --yes)",
+      "Bash(rm -rf /tmp/bab-scaffold)",
+      "Bash(npx --yes create-next-app@latest /tmp/bab-scaffold --typescript --tailwind --eslint --app --src-dir=false --import-alias \"@/*\" --use-npm --turbopack --yes)"
+    ]
+  }
+}
