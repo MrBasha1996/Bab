@@ -1,0 +1,35 @@
+{
+  "pages": {
+    "listTitle": "الاستفسارات والشكاوى",
+    "listDescription": "الرسائل الواردة من العملاء عبر الموقع العام",
+    "empty": "لا توجد استفسارات بعد",
+    "createdAt": "التاريخ"
+  },
+  "form": {
+    "name": "الاسم",
+    "phone": "الهاتف",
+    "branch": "الفرع",
+    "subject": "الموضوع"
+  },
+  "status": {
+    "new": "جديد",
+    "read": "مقروء",
+    "resolved": "تم الحل"
+  },
+  "detail": {
+    "name": "الاسم",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "subject": "الموضوع",
+    "message": "الرسالة",
+    "createdAt": "التاريخ",
+    "status": "الحالة",
+    "statusNew": "جديد",
+    "statusRead": "مقروء",
+    "statusResolved": "تم الحل",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ"
+  }
+}

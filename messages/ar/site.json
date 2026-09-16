@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "menu": "المنيو",
+    "branches": "الفروع",
+    "reserve": "حجز طاولة",
+    "events": "شركات ومناسبات",
+    "contact": "تواصل معنا"
+  },
+  "home": {
+    "heroCta": "احجز طاولة",
+    "heroSecondaryCta": "مناسبات وشركات",
+    "branchesEyebrow": "فروعنا",
+    "branchesTitle": "أينما كنت، نحن قريبون منك",
+    "noBranches": "لا توجد فروع بعد",
+    "ctaTitle": "جاهز لتجربة لا تُنسى؟",
+    "ctaDescription": "احجز طاولتك الآن وسيتواصل معك فريقنا لتأكيد الحجز"
+  },
+  "contact": {
+    "title": "تواصل معنا",
+    "description": "أرسل استفسارك أو شكواك وسيتواصل معك فريقنا",
+    "branch": "الفرع",
+    "name": "الاسم",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني (اختياري)",
+    "subject": "الموضوع (اختياري)",
+    "message": "الرسالة",
+    "submit": "إرسال",
+    "submitting": "جارٍ الإرسال…",
+    "success": "تم إرسال رسالتك، شكراً لتواصلك معنا",
+    "genericError": "تعذّر الإرسال، حاول مرة أخرى"
+  },
+  "reserve": {
+    "title": "حجز طاولة",
+    "description": "احجز طاولتك وسنؤكد الحجز قريباً",
+    "branch": "الفرع",
+    "name": "الاسم",
+    "phone": "الهاتف",
+    "partySize": "عدد الأشخاص",
+    "time": "وقت الحجز",
+    "date": "التاريخ",
+    "pickDate": "اختر تاريخاً",
+    "selectTime": "اختر وقتاً",
+    "notes": "ملاحظات (اختياري)",
+    "submit": "إرسال طلب الحجز",
+    "submitting": "جارٍ الإرسال…",
+    "success": "تم استلام طلب حجزك، سنتواصل معك للتأكيد",
+    "genericError": "تعذّر إرسال الطلب، حاول مرة أخرى",
+    "confirmationTitle": "تم إرسال طلب الحجز",
+    "confirmationDescription": "استلمنا طلبك وسيتواصل معك فريقنا للتأكيد",
+    "confirmationBranch": "الفرع",
+    "confirmationDateTime": "التاريخ والوقت",
+    "confirmationPartySize": "عدد الأشخاص",
+    "confirmationName": "الاسم",
+    "confirmationNew": "حجز جديد"
+  },
+  "menu": {
+    "title": "منتجاتنا",
+    "description": "تصفّح منيونا الكامل",
+    "selectBranch": "الفرع"
+  },
+  "events": {
+    "title": "حجز شركات ومناسبات",
+    "description": "لحجوزات الفعاليات والمناسبات الخارجية وحجوزات الشركات",
+    "branch": "الفرع",
+    "type": "نوع الحجز",
+    "typeEvent": "مناسبة",
+    "typeCorporate": "شركات",
+    "companyName": "اسم الجهة/الشركة (اختياري)",
+    "contactName": "اسم المسؤول",
+    "contactPhone": "رقم الهاتف",
+    "guestCount": "عدد الضيوف",
+    "eventDate": "تاريخ المناسبة",
+    "notes": "ملاحظات (اختياري)",
+    "submit": "إرسال الطلب",
+    "submitting": "جارٍ الإرسال…",
+    "success": "تم استلام طلبك، سيتواصل معك فريقنا لتأكيد التفاصيل",
+    "genericError": "تعذّر إرسال الطلب، حاول مرة أخرى"
+  }
+}

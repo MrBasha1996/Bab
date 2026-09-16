@@ -1,0 +1,49 @@
+{
+  "welcome": "أهلاً بك",
+  "table": "طاولة {label}",
+  "reservation": {
+    "title": "حجزك",
+    "for": "حجز باسم {name}",
+    "party": "عدد الأشخاص: {count}",
+    "time": "الوقت: {time}",
+    "notes": "ملاحظات: {notes}"
+  },
+  "search": {
+    "placeholder": "ابحث في المنيو…",
+    "noResults": "لا توجد نتائج مطابقة"
+  },
+  "empty": "لا توجد قوائم متاحة الآن",
+  "loyaltyLink": "برنامج الولاء والنقاط",
+  "loyaltyPoints": "{points} نقطة ولاء",
+  "gateway": {
+    "menu": "فتح المنيو",
+    "complaint": "شكوى أو اقتراح",
+    "review": "قيّمنا على خرائط قوقل"
+  },
+  "complaint": {
+    "title": "شكوى أو اقتراح",
+    "type": "النوع",
+    "typeComplaint": "شكوى",
+    "typeSuggestion": "اقتراح",
+    "message": "رسالتك",
+    "name": "الاسم (اختياري)",
+    "phone": "الهاتف (اختياري)",
+    "submit": "إرسال",
+    "submitting": "جارٍ الإرسال…",
+    "success": "شكراً لك، تم استلام رسالتك",
+    "genericError": "تعذّر إرسال الرسالة"
+  },
+  "item": {
+    "calories": "{count} سعرة حرارية",
+    "variants": "الأحجام",
+    "options": "الإضافات",
+    "required": "إلزامي",
+    "chooseUpTo": "اختر حتى {count}",
+    "allergens": "مُسبِّبات الحساسية",
+    "close": "إغلاق"
+  },
+  "language": {
+    "ar": "عربي",
+    "en": "English"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "welcome": "Welcome",
+  "table": "Table {label}",
+  "reservation": {
+    "title": "Your reservation",
+    "for": "Reservation for {name}",
+    "party": "Party size: {count}",
+    "time": "Time: {time}",
+    "notes": "Notes: {notes}"
+  },
+  "search": {
+    "placeholder": "Search the menu…",
+    "noResults": "No matching results"
+  },
+  "empty": "No menus available right now",
+  "loyaltyLink": "Loyalty & rewards program",
+  "loyaltyPoints": "{points} loyalty points",
+  "gateway": {
+    "menu": "Open the menu",
+    "complaint": "Complaint or suggestion",
+    "review": "Rate us on Google Maps"
+  },
+  "complaint": {
+    "title": "Complaint or suggestion",
+    "type": "Type",
+    "typeComplaint": "Complaint",
+    "typeSuggestion": "Suggestion",
+    "message": "Your message",
+    "name": "Name (optional)",
+    "phone": "Phone (optional)",
+    "submit": "Submit",
+    "submitting": "Submitting…",
+    "success": "Thank you, your message has been received",
+    "genericError": "Could not send the message"
+  },
+  "item": {
+    "calories": "{count} kcal",
+    "variants": "Sizes",
+    "options": "Add-ons",
+    "required": "Required",
+    "chooseUpTo": "Choose up to {count}",
+    "allergens": "Allergens",
+    "close": "Close"
+  },
+  "language": {
+    "ar": "عربي",
+    "en": "English"
+  }
+}

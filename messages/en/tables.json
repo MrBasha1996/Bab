@@ -1,0 +1,31 @@
+{
+  "pages": {
+    "listTitle": "Tables",
+    "listDescription": "Your branches' tables and their QR codes",
+    "newTitle": "New Table",
+    "empty": "No tables yet",
+    "addTable": "Add Table"
+  },
+  "form": {
+    "branch": "Branch",
+    "labelAr": "Table name (Arabic)",
+    "labelEn": "Table name (English)",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save"
+  },
+  "qr": {
+    "active": "Active",
+    "inactive": "Disabled",
+    "download": "Download",
+    "print": "Print",
+    "regenerate": "Regenerate",
+    "regenerateConfirm": "The current QR code will stop working immediately. Continue?",
+    "regenerated": "New code generated",
+    "disable": "Disable",
+    "disableConfirm": "The QR code will stop working until regenerated. Continue?",
+    "disabled": "Code disabled",
+    "genericError": "Could not complete the action"
+  }
+}

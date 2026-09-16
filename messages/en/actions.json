@@ -1,0 +1,8 @@
+{
+  "common": {
+    "unauthorized": "You are not allowed to perform this action",
+    "sessionExpired": "Session expired, please sign in again",
+    "invalidData": "Invalid data",
+    "halfHalfInvalid": "These two items cannot be combined half/half — both must be splittable and share at least one category"
+  }
+}

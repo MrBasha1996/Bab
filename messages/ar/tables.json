@@ -1,0 +1,31 @@
+{
+  "pages": {
+    "listTitle": "الطاولات",
+    "listDescription": "طاولات فروعك ورموز QR الخاصة بها",
+    "newTitle": "طاولة جديدة",
+    "empty": "لا توجد طاولات بعد",
+    "addTable": "إضافة طاولة"
+  },
+  "form": {
+    "branch": "الفرع",
+    "labelAr": "اسم الطاولة (عربي)",
+    "labelEn": "اسم الطاولة (إنجليزي)",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ"
+  },
+  "qr": {
+    "active": "نشط",
+    "inactive": "معطَّل",
+    "download": "تحميل",
+    "print": "طباعة",
+    "regenerate": "إعادة توليد",
+    "regenerateConfirm": "سيتوقف رمز QR الحالي عن العمل فوراً. متابعة؟",
+    "regenerated": "تم توليد رمز جديد",
+    "disable": "تعطيل",
+    "disableConfirm": "سيتوقف رمز QR عن العمل حتى إعادة توليده. متابعة؟",
+    "disabled": "تم تعطيل الرمز",
+    "genericError": "تعذّر تنفيذ الإجراء"
+  }
+}

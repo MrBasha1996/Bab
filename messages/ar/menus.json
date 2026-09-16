@@ -1,0 +1,107 @@
+{
+  "pages": {
+    "listTitle": "قوائم الطعام",
+    "listDescription": "قوائم فروعك وفئاتها",
+    "newTitle": "قائمة جديدة",
+    "empty": "لا توجد قوائم بعد",
+    "addMenu": "إضافة قائمة",
+    "scheduleTitle": "الجدولة",
+    "categoriesTitle": "الفئات",
+    "addCategory": "إضافة فئة",
+    "noCategoriesYet": "لا توجد فئات بعد"
+  },
+  "form": {
+    "branch": "الفرع",
+    "nameAr": "اسم القائمة (عربي)",
+    "nameEn": "اسم القائمة (إنجليزي)",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ"
+  },
+  "schedule": {
+    "day": "اليوم",
+    "start": "من",
+    "end": "إلى",
+    "add": "إضافة",
+    "alwaysActive": "بلا جدولة — القائمة نشطة دائماً",
+    "genericError": "تعذّر تنفيذ الإجراء",
+    "invalidTime": "وقت غير صالح",
+    "days": {
+      "sun": "الأحد",
+      "mon": "الاثنين",
+      "tue": "الثلاثاء",
+      "wed": "الأربعاء",
+      "thu": "الخميس",
+      "fri": "الجمعة",
+      "sat": "السبت"
+    }
+  },
+  "category": {
+    "pages": {
+      "newTitle": "فئة جديدة",
+      "itemsTitle": "الأصناف"
+    },
+    "form": {
+      "nameAr": "اسم الفئة (عربي)",
+      "nameEn": "اسم الفئة (إنجليزي)",
+      "save": "حفظ",
+      "saving": "جارٍ الحفظ…",
+      "saved": "تم الحفظ",
+      "genericError": "تعذّر الحفظ"
+    },
+    "items": {
+      "empty": "لا توجد أصناف في هذه الفئة بعد",
+      "addExisting": "إضافة صنف موجود",
+      "genericError": "تعذّر تنفيذ الإجراء"
+    }
+  },
+  "item": {
+    "pages": {
+      "listTitle": "الأصناف",
+      "listDescription": "كل أصناف المنيو عبر الفروع",
+      "newTitle": "صنف جديد",
+      "empty": "لا توجد أصناف بعد",
+      "addItem": "إضافة صنف"
+    },
+    "branch": "الفرع",
+    "nameAr": "اسم الصنف (عربي)",
+    "nameEn": "اسم الصنف (إنجليزي)",
+    "descriptionAr": "الوصف (عربي)",
+    "descriptionEn": "الوصف (إنجليزي)",
+    "price": "السعر",
+    "calories": "السعرات الحرارية",
+    "isSplittable": "قابل للتنصيف نصف/نصف",
+    "categories": "الفئات",
+    "allergens": "المسبِّبات",
+    "variants": "الأحجام/الخيارات (Variants)",
+    "variantNameAr": "الاسم (عربي)",
+    "variantNameEn": "الاسم (إنجليزي)",
+    "addVariant": "إضافة",
+    "optionGroups": "مجموعات الإضافات",
+    "groupNameAr": "اسم المجموعة (عربي)",
+    "groupNameEn": "اسم المجموعة (إنجليزي)",
+    "required": "إلزامية",
+    "minSelect": "الحد الأدنى",
+    "maxSelect": "الحد الأقصى",
+    "valueNameAr": "الاسم (عربي)",
+    "valueNameEn": "الاسم (إنجليزي)",
+    "addValue": "إضافة قيمة",
+    "addOptionGroup": "إضافة مجموعة",
+    "optionGroupNeedsValue": "أضف قيمة واحدة على الأقل",
+    "optionGroupRangeInvalid": "الحد الأقصى يجب أن يكون أكبر من أو يساوي الحد الأدنى",
+    "needsCategory": "اختر فئة واحدة على الأقل",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ",
+    "coverImage": "صورة الغلاف",
+    "uploadImage": "رفع صورة",
+    "changeImage": "تغيير الصورة",
+    "uploading": "جارٍ الرفع…",
+    "available": "متوفر",
+    "unavailable": "غير متوفر",
+    "visible": "ظاهر",
+    "hidden": "مخفي"
+  }
+}

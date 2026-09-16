@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "listTitle": "Branches",
+    "listDescription": "Your restaurant's branches",
+    "newTitle": "New branch",
+    "empty": "No branches yet",
+    "addBranch": "Add branch"
+  },
+  "form": {
+    "nameAr": "Branch name (Arabic)",
+    "nameEn": "Branch name (English)",
+    "addressAr": "Address (Arabic)",
+    "addressEn": "Address (English)",
+    "phone": "Phone",
+    "googleReviewsUrl": "Google Maps review link",
+    "googleMapsUrl": "Branch map link",
+    "googleMapsUrlHint": "In Google Maps: Share > Embed a map, then copy just the src URL",
+    "timezone": "Timezone",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "genericError": "Could not save"
+  }
+}

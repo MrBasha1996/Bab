@@ -1,0 +1,79 @@
+{
+  "pages": {
+    "listTitle": "الحجوزات",
+    "listDescription": "حجوزات الطاولات القادمة",
+    "newTitle": "حجز جديد",
+    "empty": "لا توجد حجوزات بعد",
+    "addReservation": "إضافة حجز",
+    "partySizeLabel": "{count} أشخاص"
+  },
+  "form": {
+    "branch": "الفرع",
+    "table": "الطاولة",
+    "noTable": "بدون طاولة محدَّدة",
+    "customerName": "اسم العميل",
+    "customerPhone": "رقم الهاتف",
+    "partySize": "عدد الأشخاص",
+    "reservationTime": "وقت الحجز",
+    "source": "مصدر الحجز",
+    "sourceWebsite": "الموقع الإلكتروني",
+    "sourcePhone": "الهاتف",
+    "sourceWalkIn": "حضور مباشر",
+    "notes": "ملاحظات",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "genericError": "تعذّر الحفظ",
+    "preorder": {
+      "title": "استعرض المنيو (اختياري)",
+      "addItem": "إضافة صنف",
+      "item": "الصنف",
+      "variant": "النوع",
+      "noVariant": "بدون نوع محدَّد",
+      "quantity": "الكمية",
+      "notes": "ملاحظات الصنف",
+      "remove": "إزالة",
+      "empty": "لا توجد أصناف متاحة لهذا الفرع الآن",
+      "halfHalf": "نصف/نصف",
+      "secondItem": "النصف الثاني",
+      "secondVariant": "نوع النصف الثاني",
+      "noSecondVariant": "بدون نوع محدَّد"
+    }
+  },
+  "detail": {
+    "customerName": "اسم العميل",
+    "customerPhone": "رقم الهاتف",
+    "partySize": "عدد الأشخاص",
+    "reservationTime": "وقت الحجز",
+    "table": "الطاولة",
+    "source": "مصدر الحجز",
+    "notes": "ملاحظات",
+    "status": "الحالة",
+    "statusPending": "قيد المراجعة",
+    "statusConfirmed": "مؤكد",
+    "statusCancelled": "ملغى",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ",
+    "sourceValue": {
+      "website": "الموقع الإلكتروني",
+      "phone": "الهاتف",
+      "walk_in": "حضور مباشر"
+    },
+    "preorder": {
+      "title": "الأصناف المطلوبة مسبقاً",
+      "empty": "لا توجد أصناف مطلوبة مسبقاً",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "variant": "النوع",
+      "noVariant": "بدون نوع محدَّد",
+      "notes": "ملاحظات",
+      "remove": "إزالة",
+      "addItem": "إضافة صنف",
+      "halfHalf": "نصف/نصف",
+      "secondItem": "النصف الثاني",
+      "secondVariant": "نوع النصف الثاني",
+      "noSecondVariant": "بدون نوع محدَّد"
+    }
+  }
+}

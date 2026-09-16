@@ -1,0 +1,1478 @@
+{
+  "source": "https://bab-albalad.menus-sa.com/ar",
+  "scraped_at": "2026-09-15T11:34:34.535Z",
+  "restaurant": {
+    "name_ar": "باب البلد",
+    "name_en": "Bab Albalad",
+    "logo_file": "logo.jpg"
+  },
+  "categories": [
+    {
+      "name_ar": "وجبات الغداء والعشاء",
+      "name_en": "Lunches",
+      "items": [
+        {
+          "name_ar": "كبسة باب البلد دجاج",
+          "name_en": "Bab al balad chicken kabsa",
+          "description_ar": "كبسة باب البلد مع دجاج متبل مطبوخ على الأصول ببهارات غنية وأرز مفلفل بطعم شهي ومميز.",
+          "description_en": "Rice cooked with sauce and kashna together with fresh chicken",
+          "price": 27,
+          "calories": 1399,
+          "image_file": "c0-00-bab-al-balad-chicken-kabsa-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "محمر دجاج",
+          "name_en": "Chicken Muhammar",
+          "description_ar": "أرز مطبوخ ومبخر مع دجاج محمّر في الفرن بوزن 450 جرام، بنكهة غنية وتتبيلة شهية تجمع بين الطراوة والقرمشة.",
+          "description_en": "Cooked and steamed rice with 450 grams of oven-roasted chicken",
+          "price": 28,
+          "calories": 1199,
+          "image_file": "c0-01-chicken-muhammar-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "سليق دجاج",
+          "name_en": "Slim chicken",
+          "description_ar": "ارز مطبوخ مع الحليب والسمن البلدي سليق دجاج كريمي مطبوخ بحليب الأرز مع السمن البلدي مع دجاج طري ونكهة غنية دافئة بطابع تقليدي شهي.",
+          "description_en": "Rice cooked with milk and ghee",
+          "price": 42,
+          "calories": 900,
+          "image_file": "c0-02-slim-chicken-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الحليب ومنتجاته",
+              "name_en": "Milk and its products",
+              "icon_file": "allergen-الحليب-ومنتجاته.png"
+            },
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "بشاميل اللحم",
+          "name_en": "Bechamel with meat",
+          "description_ar": "مكرونة بالبشاميل مع لحم مفروم بطبقات كريمية غنية بنكهة متوازنة وشهية.",
+          "description_en": "Bechamel sauce pasta with meat",
+          "price": 25,
+          "calories": 850,
+          "image_file": "c0-03-bechamel-with-meat-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الحليب ومنتجاته",
+              "name_en": "Milk and its products",
+              "icon_file": "allergen-الحليب-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "كرات اللحم",
+          "name_en": "Meatballs",
+          "description_ar": "كرات لحم طريّة متبّلة ومطهوة بإتقان بنكهة غنية مع الصوص.",
+          "description_en": "Meat chef special sauce dish",
+          "price": 32,
+          "calories": 400,
+          "image_file": "c0-04-meatballs-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "مصقعة",
+          "name_en": "😍😍😍😍",
+          "description_ar": "مصقعة بطاطس وباذنجان مع لحم مفروم وصوص خاص بنكهة غنية ومطبوخة بإتقان بطعم شهي ومتوازن.",
+          "description_en": "Potatoes, eggplant, tomatoes and special chef sauce",
+          "price": 28,
+          "calories": 750,
+          "image_file": "c0-05-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "ملوخيه",
+          "name_en": "mulukhiyah",
+          "description_ar": "ملوخية مطبوخة بالثوم والتوابل بنكهة دافئة وقوام مميز .",
+          "description_en": "Molokhiya cooked with garlic and spices, with a warm flavor and distinctive texture.",
+          "price": 18,
+          "calories": 300,
+          "image_file": "c0-06-mulukhiyah-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "باميه مطبوخه",
+          "name_en": "Cooked okra",
+          "description_ar": "",
+          "description_en": "",
+          "price": 16,
+          "calories": null,
+          "image_file": "c0-07-cooked-okra-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "ايدام بطاطس",
+          "name_en": "Edam potatoes",
+          "description_ar": "إيدام بطاطس مطبوخ بصوص طماطم متبل ببهارات خاصة بنكهة غنية ولذيذ.",
+          "description_en": "Potatoes cooked with sauce and tomatoes",
+          "price": 14,
+          "calories": 349,
+          "image_file": "c0-08-edam-potatoes-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "سلطة خضار",
+          "name_en": "Vegetable salad",
+          "description_ar": "سلطة طازجة من الطماطم والخيار والخس مع لمسة سماق وزيت زيتون وعصير ليمون بنكهة منعشة وخفيفة.",
+          "description_en": "Tomatoes, cucumber, lettuce, and sumac",
+          "price": 12,
+          "calories": 120,
+          "image_file": "c0-09-vegetable-salad-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "بذور السمسم ومنتجاتها",
+              "name_en": "Sesame seeds and their products",
+              "icon_file": "allergen-بذور-السمسم-ومنتجاتها.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "الاطباق الرئيسية",
+      "name_en": "Main dishes",
+      "items": [
+        {
+          "name_ar": "مقلقل لحم",
+          "name_en": "Meat mqalqal",
+          "description_ar": "مقلقل لحم طري مطهو مع البهارات الخاصة ليمنحك نكهة غنية ورائحة شهية بطابع حجازي أصيل.",
+          "description_en": "Slices of meat, cut and cooked with oil and our special spices",
+          "price": 35,
+          "calories": 700,
+          "image_file": "c1-00-meat-mqalqal-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "کبده",
+          "name_en": "liver",
+          "description_ar": "كبده طازجه مطبوخه بالطماطم والبهارات الخاصه",
+          "description_en": "Fresh lamb liver cooked with tomatoes and our special spices",
+          "price": 33,
+          "calories": 710,
+          "image_file": "c1-01-liver-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "کبده اجبان",
+          "name_en": "Liver liver",
+          "description_ar": "كبده طازجه مع البهارات الخاصه والأجبان اللذيذه",
+          "description_en": "Fresh liver with special spices and delicious cheeses",
+          "price": 37,
+          "calories": 990,
+          "image_file": "c1-02-liver-liver-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تونة",
+          "name_en": "tone",
+          "description_ar": "تونة مطبوخة مع الخضار والبهارات الخاصة لتمنحك طعمًا خفيفًا ولذيذًا بنكهة متوازنة.",
+          "description_en": "Tuna cooked with vegetables and our special spices",
+          "price": 24,
+          "calories": 770,
+          "image_file": "c1-03-tone-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الاسماك ومنتجاتها",
+              "name_en": "Fish and its products",
+              "icon_file": "allergen-الاسماك-ومنتجاتها.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "فاصوليا بيض",
+          "name_en": "Egg beans",
+          "description_ar": "فاصوليا بيضاء بطابع حجازي مع الخضار والبهارات الخاصة بطعم أصيل وغني.",
+          "description_en": "Beans cooked with vegetables and our special spices",
+          "price": 17,
+          "calories": 690,
+          "image_file": "c1-04-egg-beans-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "فول",
+      "name_en": "Fol",
+      "items": [
+        {
+          "name_ar": "فول جره",
+          "name_en": "Jarrah beans",
+          "description_ar": "",
+          "description_en": "Beans cooked with delicious fare",
+          "price": 15,
+          "calories": 480,
+          "image_file": "c2-00-jarrah-beans-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "بذور السمسم ومنتجاتها",
+              "name_en": "Sesame seeds and their products",
+              "icon_file": "allergen-بذور-السمسم-ومنتجاتها.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "قلابة",
+          "name_en": "Dumper",
+          "description_ar": "",
+          "description_en": "Qalaba beans cooked in ghee or olive oil and vegetables",
+          "price": 16,
+          "calories": 740,
+          "image_file": "c2-01-dumper-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "قلابة باب البلد",
+          "name_en": "Gate door of the country",
+          "description_ar": "",
+          "description_en": "Qalaba beans cooked in ghee or olive oil and steamed vegetables",
+          "price": 25,
+          "calories": 740,
+          "image_file": "c2-02-gate-door-of-the-country-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الحليب ومنتجاته",
+              "name_en": "Milk and its products",
+              "icon_file": "allergen-الحليب-ومنتجاته.png"
+            },
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "البيض",
+      "name_en": "Eggs",
+      "items": [
+        {
+          "name_ar": "شكشوكة باب البلد",
+          "name_en": "Bab al-Balad eggs",
+          "description_ar": "طبق مميز مزيج البيض مع انواع الأجبان اللذيذة",
+          "description_en": "A distinctive dish that mixes eggs with delicious types of cheese",
+          "price": 26,
+          "calories": 1170,
+          "image_file": "c3-00-bab-al-balad-eggs-image.png",
+          "allergens": [
+            {
+              "name_ar": "الحليب ومنتجاته",
+              "name_en": "Milk and its products",
+              "icon_file": "allergen-الحليب-ومنتجاته.png"
+            },
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "شكشوكة",
+          "name_en": "Shakshuka Bab El Balad",
+          "description_ar": "مزيج من البيض والخضار الطازجة مطبوخ بالبهارات الخاصة ليمنحك نكهة غنية ومتوازنة بطابع حجازي مميز.",
+          "description_en": "A mixture of eggs and vegetables cooked with our special spices",
+          "price": 19,
+          "calories": 620,
+          "image_file": "c3-01-shakshuka-bab-el-balad-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "بيض باب البلد",
+          "name_en": "Egg and delicious",
+          "description_ar": "بيض باب البلد مزيج خاص من البيض والبهارات الفريدة مع لمسة جبنة سائلة كريمية بطعم غني ومميز.",
+          "description_en": "Mix eggs together, special spices and liquid cheese",
+          "price": 21,
+          "calories": 1170,
+          "image_file": "c3-02-egg-and-delicious-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "بيض اومليت",
+          "name_en": "Omelette eggs",
+          "description_ar": "مزيج البيض المطبوخ مع الجبن طري ومليء بالنكهة، يُحضّر بإتقان ليمنحك وجبة خفيفة ومشبعة .",
+          "description_en": "Egg mixture cooked in omelette style",
+          "price": 21,
+          "calories": 520,
+          "image_file": "c3-03-omelette-eggs-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الحليب ومنتجاته",
+              "name_en": "Milk and its products",
+              "icon_file": "allergen-الحليب-ومنتجاته.png"
+            }
+          ]
+        },
+        {
+          "name_ar": "بيض عيون",
+          "name_en": "Eye eggs",
+          "description_ar": "بيض عيون طازج يُقدّم بأسلوب بسيط وشهي ليمنحك بداية يوم خفيفة ومليئة بالنكهة.",
+          "description_en": "Cooked egg whites",
+          "price": 19,
+          "calories": 400,
+          "image_file": "c3-04-eye-eggs-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "المطبق",
+      "name_en": "Applied",
+      "items": [
+        {
+          "name_ar": "مطبق خضار",
+          "name_en": "Vegetable mutabbaq",
+          "description_ar": "مطبق خضار بطابع حجازي محشو بخضار متبلة وتوابل خاصة بطعم مقرمش ولذيذ.",
+          "description_en": "Dough mixed together with vegetables",
+          "price": 16,
+          "calories": 550,
+          "image_file": "c4-00-vegetable-mutabbaq-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "مطبق لحم",
+          "name_en": "Mutabaq meat",
+          "description_ar": "مطبق لحم بطابع حجازي محشو بلحم متبل وتوابل خاصة بطعم غني ومقرمش.",
+          "description_en": "Mutabbaq dough combined with vegetables and meat",
+          "price": 19,
+          "calories": 670,
+          "image_file": "c4-01-mutabaq-meat-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "مطبق خضار جبنة بيضاء",
+          "name_en": "White cheese vegetable mutabaq",
+          "description_ar": "مطبق خضار وجبنة بيضاء بطعم مقرمش وحشوة غنية ومتوازنة.",
+          "description_en": "Mutabbak dough with white cheese",
+          "price": 17,
+          "calories": 890,
+          "image_file": "c4-02-white-cheese-vegetable-mutabaq-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "مطبق تونة",
+          "name_en": "according to tone",
+          "description_ar": "عجينة المطبق بحشوة الخضار والتونة بتوابل خاصة داخل طبقات مقرمشة ولذيذة.",
+          "description_en": "Mutabbaq dough mixed with vegetables and tuna",
+          "price": 21,
+          "calories": 610,
+          "image_file": "c4-03-according-to-tone-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الاسماك ومنتجاتها",
+              "name_en": "Fish and its products",
+              "icon_file": "allergen-الاسماك-ومنتجاتها.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "مطبق جبنة حلو",
+          "name_en": "Sweet cheese mutabbaq",
+          "description_ar": "مطبق جبنة حلوة بحشوة كريمية لذيذة داخل طبقات مقرمشة بطعم متوازن وخفيف.",
+          "description_en": "Mutabbaq dough with our special cheese",
+          "price": 18,
+          "calories": 1530,
+          "image_file": "c4-04-sweet-cheese-mutabbaq-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "مطبق موز حلو",
+          "name_en": "Banana sweet dish",
+          "description_ar": "مطبق موز حلو بحشوة موز داخل طبقات مقرمشة بطعم دافئ وحلا خفيف.",
+          "description_en": "Mutabbaq pamouz dough",
+          "price": 17,
+          "calories": 840,
+          "image_file": "c4-05-banana-sweet-dish-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "مطبق قشطة حلو",
+          "name_en": "Mutabbaq sweet cream",
+          "description_ar": "مطبق قشطة حلو بحشوة قشطة القيمر داخل طبقات مقرمشة بطعم غني وحلا متوازن.",
+          "description_en": "Mutabbaq dough with cream",
+          "price": 18,
+          "calories": 1120,
+          "image_file": "c4-06-mutabbaq-sweet-cream-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "فطيرة جبنة شيدر بالطماطم",
+          "name_en": "Cheddar cheese and tomato pie",
+          "description_ar": "فطيرة جبنة شيدر بالطماطم بحشوة ذائبة ونكهة غنية داخل عجينة مقرمشة.",
+          "description_en": "Pie with cheddar cheese",
+          "price": 15,
+          "calories": 820,
+          "image_file": "c4-07-cheddar-cheese-and-tomato-pie-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "فطيرة نوتيلا",
+          "name_en": "Nutella pie",
+          "description_ar": "فطيرة نوتيلا بحشوة شوكولاتة كريمية داخل عجينة مقرمشة بطعم حلو.",
+          "description_en": "Pancakes with nutla",
+          "price": 19,
+          "calories": 830,
+          "image_file": "c4-08-nutella-pie-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "المكسرات ومنتجاتها",
+              "name_en": "Nuts and its products",
+              "icon_file": "allergen-المكسرات-ومنتجاتها.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الفول السوداني ومنتجاته",
+              "name_en": "Peanuts and its products",
+              "icon_file": "allergen-الفول-السوداني-ومنتجاته.png"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "فطيرة لبنة زعتر",
+          "name_en": "Labneh and thyme pie",
+          "description_ar": "فطيرة لبنة وزعتر بحشوة كريمية ونكهة زعتر عطرية داخل عجينة مقرمشة.",
+          "description_en": "Pie with milk and thyme",
+          "price": 16,
+          "calories": 690,
+          "image_file": "c4-09-labneh-and-thyme-pie-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "معصوب",
+      "name_en": "Blindfolded",
+      "items": [
+        {
+          "name_ar": "معصوب زمان اول",
+          "name_en": "Moasob the first time",
+          "description_ar": "معصوب زمان أول بموز طازج وفطيرة مقرمشة .",
+          "description_en": "Crispy pie with banana, delicious cream and honey",
+          "price": 12,
+          "calories": 1000,
+          "image_file": "c5-00-moasob-the-first-time-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "معصوب باب البلد",
+          "name_en": "Masoub Bab Al Balad",
+          "description_ar": "معصوب باب البلد فطيرة مقرمشة مع الموز وقشطة كريمية وجبنًا مع الكورن فلكس والعسل بطعم غني ومميز.",
+          "description_en": "Crispy pie with banana, cream, cheese, corn flakes and honey",
+          "price": 26,
+          "calories": 2380,
+          "image_file": "c5-01-masoub-bab-al-balad-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "معصوب حليب",
+          "name_en": "Milk masoub",
+          "description_ar": "معصوب بالحليب الجيلاني مع موز طازج وقوام كريمي بطعم حلو خفيف .",
+          "description_en": "Crispy pie with banana and gelatin milk",
+          "price": 15,
+          "calories": 960,
+          "image_file": "c5-02-milk-masoub-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "معصوب قشطة حليب",
+          "name_en": "Milk cream masoub",
+          "description_ar": "معصوب بالقشطة والحليب الجيلاني مع الموز الطازج بطعم غني ولمسة حلا متوازنة.",
+          "description_en": "Crispy pie with banana, cream, cheese, corn flakes and honey",
+          "price": 22,
+          "calories": 1340,
+          "image_file": "c5-03-milk-cream-masoub-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "معصوب قشطة عسل",
+          "name_en": "Honey cream masoub",
+          "description_ar": "معصوب بالقشطة والعسل مع موز طازج وقوام كريمي بطعم حلو غني ومتوازن.",
+          "description_en": "Crispy pie with banana and gelatin milk",
+          "price": 20,
+          "calories": 1300,
+          "image_file": "c5-04-honey-cream-masoub-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "معصوب قشطة",
+          "name_en": "Masoub cream",
+          "description_ar": "الفطيره المقرمشه مع الموز والقشطة",
+          "description_en": "Crispy pie with banana, cream and gelatin milk",
+          "price": 16,
+          "calories": 1240,
+          "image_file": "c5-05-masoub-cream-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "عريكه",
+      "name_en": "character",
+      "items": [
+        {
+          "name_ar": "عريكة دخن",
+          "name_en": "Areca millet",
+          "description_ar": "فطيرة الدخن اللذيذة محشوة بالتمر والقشطة والجبن مع الكورن فلكس ومغطاة بالعسل بطعم غني يجمع القرمشة والحلا.",
+          "description_en": "Delicious millet pie with dates, cream, cheese, cornflakes and honey",
+          "price": 29,
+          "calories": 330,
+          "image_file": "c6-00-areca-millet-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "عريكة باب البلد",
+          "name_en": "Bab al-Balad shed",
+          "description_ar": "فطيرة مقرمشة محشوة بالتمر والقشطة والجبن مع الكورن فلكس ومغطاة بالعسل بطعم غني يجمع الحلا والقرمشة .",
+          "description_en": "Crispy pie with dates, cream, cheese, corn flakes and honey",
+          "price": 26,
+          "calories": 340,
+          "image_file": "c6-01-bab-al-balad-shed-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "عريكة قشطة عسل جبن شيدر",
+          "name_en": "Areka, cream, honey, cheddar cheese",
+          "description_ar": "فطيرة مقرمشة محشوة بالتمر والقشطة وجبنة الشيدر ومغطاة بالعسل بطعم فريد يجمع الحلا والملوحة في توازن مميز.",
+          "description_en": "Crispy pie with dates, delicious cream, honey and cheddar cheese",
+          "price": 23,
+          "calories": 340,
+          "image_file": "c6-02-areka-cream-honey-cheddar-cheese-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "عريكة قشطة عسل",
+          "name_en": "Arika cream honey",
+          "description_ar": "فطيرة مقرمشة محشوة بالتمر والقشطة ومغطاة بالعسل بطعم غني يجمع الحلا والطعم الغني.",
+          "description_en": "Crispy pie with dates, delicious cream and honey",
+          "price": 20,
+          "calories": 330,
+          "image_file": "c6-03-arika-cream-honey-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "عريكة قشطة",
+          "name_en": "Areka cream",
+          "description_ar": "فطيرة مقرمشة محشوة بالتمر والقشطة بطعم غني يجمع الحلا والطعم المميز.",
+          "description_en": "Crispy pie with dates and delicious cream",
+          "price": 16,
+          "calories": 330,
+          "image_file": "c6-04-areka-cream-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "عريكة زمان",
+          "name_en": "Ereka Zaman",
+          "description_ar": "الفطيره المقرمشه بالتمر عريكة بالتمر بعجينة مقرمشة ممزوجة بالتمر وبطعم غني ولذيذ .",
+          "description_en": "Crispy pie with our special dates",
+          "price": 12,
+          "calories": 1240,
+          "image_file": "c6-05-ereka-zaman-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "البيض ومنتجاته",
+              "name_en": "Eggs and their products",
+              "icon_file": "allergen-البيض-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "التعتيمة",
+      "name_en": "Blackout",
+      "items": [
+        {
+          "name_ar": "قشطة",
+          "name_en": "My cream",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-00-my-cream-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "جبنة حلوم",
+          "name_en": "Halloumi cheese",
+          "description_ar": "",
+          "description_en": "",
+          "price": 25,
+          "calories": null,
+          "image_file": "c7-01-halloumi-cheese-image.png",
+          "allergens": []
+        },
+        {
+          "name_ar": "جبنة  بيضاء وجبنة شيدر",
+          "name_en": "Kashkaun cheese",
+          "description_ar": "",
+          "description_en": "",
+          "price": 10,
+          "calories": null,
+          "image_file": "c7-02-kashkaun-cheese-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "جبنة سائل",
+          "name_en": "Cup cheese",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-03-cup-cheese-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "مربی فروله",
+          "name_en": "Coach Frouleh",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-04-coach-frouleh-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "عسل",
+          "name_en": "honey",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-05-honey-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "لبنه",
+          "name_en": "Lubna",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-06-lubna-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "حلاوة طحينية",
+          "name_en": "Halva",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-07-halva-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "زيتون مع الزعتر",
+          "name_en": "Black olives",
+          "description_ar": "",
+          "description_en": "",
+          "price": 8,
+          "calories": null,
+          "image_file": "c7-08-black-olives-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "تعتيمة زمان",
+          "name_en": "The closing of the time of 7 guilds",
+          "description_ar": "اختيار براد شاي احمر او اخضر ،جبنة شيدر معا جبنة بيضاء ، زيتون مشوي مع زيتون كلامات معا زيتون اسود معا زيتون اخضر ، لبنه ، قشطه ،مربى الفراولة ،عسل ،حلاوة طحينية",
+          "description_en": "Cheddar cheese combined with white cheese Grilled olives with Kalamat olives, black olives and green olives Labneh , cream Strawberry jam Honey Halva",
+          "price": 39,
+          "calories": null,
+          "image_file": "c7-09-the-closing-of-the-time-of-7-guilds-image.jpg",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "name_ar": "التميس",
+      "name_en": "Al-Tamis",
+      "items": [
+        {
+          "name_ar": "خبز ملوح",
+          "name_en": "Mallouh bread",
+          "description_ar": "عجينة خاصه",
+          "description_en": "Our delicious dough",
+          "price": 4,
+          "calories": 1230,
+          "image_file": "c8-00-mallouh-bread-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تميس زعتر بزيت الزيتون",
+          "name_en": "Tamis thyme with olive oil",
+          "description_ar": "تميس بالزعتر بعجينة طازجة مخبوزة مع الزعتر وزيت الزيتون بنكهة مميزة.",
+          "description_en": "Our delicious Tamis dough with thyme",
+          "price": 9,
+          "calories": 1160,
+          "image_file": "c8-01-tamis-thyme-with-olive-oil-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تميس جبنة",
+          "name_en": "Tamis cheddar cheese",
+          "description_ar": "عجينة التميس الخاصه بجبنة الشيدر",
+          "description_en": "Our delicious Tamis dough with cheddar cheese",
+          "price": 10,
+          "calories": 1340,
+          "image_file": "c8-02-tamis-cheddar-cheese-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تميس بر",
+          "name_en": "Tamis Bur",
+          "description_ar": "تميس بر بطحين القمح الكامل بقوام طري ونكهة غنية وصحية .",
+          "description_en": "Our delicious Tamis dough",
+          "price": 6,
+          "calories": 740,
+          "image_file": "c8-03-tamis-bur-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تميس حلاوه",
+          "name_en": "Tamis Halawa",
+          "description_ar": "عجينة التميس الخاصه بالحلاوه",
+          "description_en": "Our delicious Tamis dough with sweetness",
+          "price": 9,
+          "calories": null,
+          "image_file": "c8-04-tamis-halawa-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "تميس سمن",
+          "name_en": "Tamis ghee",
+          "description_ar": "تميس بالسمن طري من الداخل ومقرمش من الخارج بنكهة خاصة .",
+          "description_en": "Our delicious Tamis dough with Basman",
+          "price": 6,
+          "calories": 1150,
+          "image_file": "c8-05-tamis-ghee-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "بذور السمسم ومنتجاتها",
+              "name_en": "Sesame seeds and their products",
+              "icon_file": "allergen-بذور-السمسم-ومنتجاتها.png"
+            },
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تميس بسكوت",
+          "name_en": "Tamis biscuits",
+          "description_ar": "تميس بسكويت هش ومقرمش بنكهة خفيفة بطعم لذيذ ومميز.",
+          "description_en": "Our delicious Tamis dough",
+          "price": 4,
+          "calories": 1060,
+          "image_file": "c8-06-tamis-biscuits-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "تميس",
+          "name_en": "Tamis country",
+          "description_ar": "عجينة التميس الخاصة",
+          "description_en": "Our delicious Tamis dough",
+          "price": 4,
+          "calories": 930,
+          "image_file": "c8-07-tamis-country-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "فول الصويا ومنتجاته",
+              "name_en": "Soybeans and its products",
+              "icon_file": "allergen-فول-الصويا-ومنتجاته.png"
+            },
+            {
+              "name_ar": "القمح",
+              "name_en": "Wheat",
+              "icon_file": "allergen-القمح.jpg"
+            },
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name_ar": "المشروبات الباردة",
+      "name_en": "Cold drinks",
+      "items": [
+        {
+          "name_ar": "ماء",
+          "name_en": "Watery",
+          "description_ar": "",
+          "description_en": "",
+          "price": 5,
+          "calories": null,
+          "image_file": "c9-00-watery-image.png",
+          "allergens": []
+        },
+        {
+          "name_ar": "مشروب غازي",
+          "name_en": "Soft drink",
+          "description_ar": "",
+          "description_en": "",
+          "price": 7,
+          "calories": null,
+          "image_file": "c9-01-soft-drink-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "عصير ليمون نعناع",
+          "name_en": "Lemon mint juice",
+          "description_ar": "",
+          "description_en": "",
+          "price": 18,
+          "calories": null,
+          "image_file": "c9-02-lemon-mint-juice-image.png",
+          "allergens": []
+        },
+        {
+          "name_ar": "عصير برتقال",
+          "name_en": "orange juice",
+          "description_ar": "",
+          "description_en": "",
+          "price": 19,
+          "calories": null,
+          "image_file": "c9-03-orange-juice-image.jpg",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "name_ar": "المشروبات الساخنه",
+      "name_en": "Hot drinks",
+      "items": [
+        {
+          "name_ar": "كاسة شاي حليب",
+          "name_en": "A cup of milk",
+          "description_ar": "",
+          "description_en": "",
+          "price": 5,
+          "calories": null,
+          "image_file": "c10-00-a-cup-of-milk-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "دله قهوه عربي",
+          "name_en": "Arabic coffee beans",
+          "description_ar": "",
+          "description_en": "",
+          "price": 15,
+          "calories": 10,
+          "image_file": "c10-01-arabic-coffee-beans-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "براد شاي عدني",
+          "name_en": "Please promise me something",
+          "description_ar": "",
+          "description_en": "",
+          "price": 20,
+          "calories": 520,
+          "image_file": "c10-02-please-promise-me-something-image.jpg",
+          "allergens": [
+            {
+              "name_ar": "الاكتوز",
+              "name_en": "الاكتوز",
+              "icon_file": "allergen-الاكتوز.jpg"
+            }
+          ]
+        },
+        {
+          "name_ar": "براد شاي حليب",
+          "name_en": "A cup of milk",
+          "description_ar": "",
+          "description_en": "",
+          "price": 20,
+          "calories": null,
+          "image_file": "c10-03-a-cup-of-milk-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "براد شاي اخضر",
+          "name_en": "Something green refrigerator",
+          "description_ar": "",
+          "description_en": "",
+          "price": 13,
+          "calories": 0,
+          "image_file": "c10-04-something-green-refrigerator-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "براد شاي احمر",
+          "name_en": "Something red",
+          "description_ar": "",
+          "description_en": "",
+          "price": 13,
+          "calories": 280,
+          "image_file": "c10-05-something-red-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "كاسة شاي عدني",
+          "name_en": "A cup of something, come back to me",
+          "description_ar": "",
+          "description_en": "",
+          "price": 5,
+          "calories": null,
+          "image_file": "c10-06-a-cup-of-something-come-back-to-me-image.jpg",
+          "allergens": []
+        },
+        {
+          "name_ar": "كاسة شاي اخضر",
+          "name_en": "A cup of something green",
+          "description_ar": "",
+          "description_en": "",
+          "price": 3,
+          "calories": null,
+          "image_file": "c10-07-a-cup-of-something-green-image.png",
+          "allergens": []
+        },
+        {
+          "name_ar": "كاسة شاي أحمر",
+          "name_en": "A cup of something red",
+          "description_ar": "",
+          "description_en": "",
+          "price": 3,
+          "calories": null,
+          "image_file": "c10-08-a-cup-of-something-red-image.jpg",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "name_ar": "مقبلات",
+      "name_en": "appetizers",
+      "items": [
+        {
+          "name_ar": "بطاطس مقليه",
+          "name_en": "French fries",
+          "description_ar": "",
+          "description_en": "",
+          "price": 14,
+          "calories": null,
+          "image_file": "c11-00-french-fries-image.jpg",
+          "allergens": []
+        }
+      ]
+    }
+  ]
+}

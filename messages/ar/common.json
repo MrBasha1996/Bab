@@ -1,0 +1,47 @@
+{
+  "back": "رجوع",
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "confirm": "تأكيد",
+  "close": "إغلاق",
+  "loading": "جارٍ التحميل…",
+  "language": "اللغة",
+  "arabic": "العربية",
+  "english": "English",
+  "select": "اختر…",
+  "searchPlaceholder": "بحث…",
+  "all": "الكل",
+  "createdAt": "تاريخ الإنشاء",
+  "from": "من",
+  "to": "إلى",
+  "noResults": "لا نتائج",
+  "previous": "السابق",
+  "next": "التالي",
+  "logout": "تسجيل الخروج",
+  "theme": {
+    "label": "إعدادات المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "حسب الجهاز"
+  },
+  "roles": {
+    "owner": "مالك",
+    "branch_manager": "مدير فرع",
+    "staff": "موظف"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "branches": "الفروع",
+    "menus": "المنايو",
+    "items": "الأصناف",
+    "tables": "الطاولات",
+    "reservations": "الحجوزات",
+    "eventReservations": "المناسبات والشركات",
+    "inquiries": "الاستفسارات والشكاوى",
+    "complaints": "شكاوى واقتراحات الطاولة",
+    "loyalty": "الولاء",
+    "restaurantSettings": "إعدادات المطعم",
+    "openMenu": "فتح القائمة",
+    "menu": "القائمة"
+  }
+}

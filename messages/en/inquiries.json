@@ -1,0 +1,35 @@
+{
+  "pages": {
+    "listTitle": "Inquiries & Complaints",
+    "listDescription": "Messages received from customers through the public site",
+    "empty": "No inquiries yet",
+    "createdAt": "Date"
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "branch": "Branch",
+    "subject": "Subject"
+  },
+  "status": {
+    "new": "New",
+    "read": "Read",
+    "resolved": "Resolved"
+  },
+  "detail": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "createdAt": "Date",
+    "status": "Status",
+    "statusNew": "New",
+    "statusRead": "Read",
+    "statusResolved": "Resolved",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save"
+  }
+}

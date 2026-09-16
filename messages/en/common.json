@@ -1,0 +1,47 @@
+{
+  "back": "Back",
+  "save": "Save",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "close": "Close",
+  "loading": "Loading…",
+  "language": "Language",
+  "arabic": "العربية",
+  "english": "English",
+  "select": "Select…",
+  "searchPlaceholder": "Search…",
+  "all": "All",
+  "createdAt": "Created at",
+  "from": "From",
+  "to": "To",
+  "noResults": "No results",
+  "previous": "Previous",
+  "next": "Next",
+  "logout": "Logout",
+  "theme": {
+    "label": "Appearance settings",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "roles": {
+    "owner": "Owner",
+    "branch_manager": "Branch Manager",
+    "staff": "Staff"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "branches": "Branches",
+    "menus": "Menus",
+    "items": "Items",
+    "tables": "Tables",
+    "reservations": "Reservations",
+    "eventReservations": "Corporate & Events",
+    "inquiries": "Inquiries & Complaints",
+    "complaints": "Table Complaints & Suggestions",
+    "loyalty": "Loyalty",
+    "restaurantSettings": "Restaurant settings",
+    "openMenu": "Open menu",
+    "menu": "Menu"
+  }
+}

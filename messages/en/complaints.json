@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "listTitle": "Table Complaints & Suggestions",
+    "listDescription": "Messages submitted by table guests via the QR entry page",
+    "empty": "No complaints or suggestions yet",
+    "createdAt": "Date"
+  },
+  "form": {
+    "type": "Type",
+    "message": "Message",
+    "name": "Name",
+    "phone": "Phone",
+    "branch": "Branch",
+    "table": "Table"
+  },
+  "type": {
+    "complaint": "Complaint",
+    "suggestion": "Suggestion"
+  }
+}

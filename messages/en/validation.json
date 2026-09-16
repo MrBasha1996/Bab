@@ -1,0 +1,11 @@
+{
+  "common": {
+    "required": "Required",
+    "invalidValue": "Invalid value",
+    "nameTooShort": "Name is too short",
+    "nameTooLong": "Name is too long",
+    "descriptionTooLong": "Description is too long",
+    "invalidEmail": "Invalid email address",
+    "amountPositive": "Amount must be greater than zero"
+  }
+}

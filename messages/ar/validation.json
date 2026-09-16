@@ -1,0 +1,11 @@
+{
+  "common": {
+    "required": "مطلوب",
+    "invalidValue": "قيمة غير صالحة",
+    "nameTooShort": "الاسم قصير جداً",
+    "nameTooLong": "الاسم طويل جداً",
+    "descriptionTooLong": "الوصف طويل جداً",
+    "invalidEmail": "بريد إلكتروني غير صالح",
+    "amountPositive": "المبلغ يجب أن يكون أكبر من صفر"
+  }
+}

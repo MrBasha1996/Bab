@@ -1,0 +1,79 @@
+{
+  "pages": {
+    "listTitle": "Reservations",
+    "listDescription": "Upcoming table reservations",
+    "newTitle": "New Reservation",
+    "empty": "No reservations yet",
+    "addReservation": "Add Reservation",
+    "partySizeLabel": "{count} guests"
+  },
+  "form": {
+    "branch": "Branch",
+    "table": "Table",
+    "noTable": "No table selected",
+    "customerName": "Customer name",
+    "customerPhone": "Phone number",
+    "partySize": "Party size",
+    "reservationTime": "Reservation time",
+    "source": "Reservation source",
+    "sourceWebsite": "Website",
+    "sourcePhone": "Phone",
+    "sourceWalkIn": "Walk-in",
+    "notes": "Notes",
+    "save": "Save",
+    "saving": "Saving…",
+    "genericError": "Could not save",
+    "preorder": {
+      "title": "Browse menu (optional)",
+      "addItem": "Add item",
+      "item": "Item",
+      "variant": "Variant",
+      "noVariant": "No variant selected",
+      "quantity": "Quantity",
+      "notes": "Item notes",
+      "remove": "Remove",
+      "empty": "No items available for this branch right now",
+      "halfHalf": "Half/half",
+      "secondItem": "Second half",
+      "secondVariant": "Second half variant",
+      "noSecondVariant": "No variant selected"
+    }
+  },
+  "detail": {
+    "customerName": "Customer name",
+    "customerPhone": "Phone number",
+    "partySize": "Party size",
+    "reservationTime": "Reservation time",
+    "table": "Table",
+    "source": "Reservation source",
+    "notes": "Notes",
+    "status": "Status",
+    "statusPending": "Pending",
+    "statusConfirmed": "Confirmed",
+    "statusCancelled": "Cancelled",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save",
+    "sourceValue": {
+      "website": "Website",
+      "phone": "Phone",
+      "walk_in": "Walk-in"
+    },
+    "preorder": {
+      "title": "Pre-ordered items",
+      "empty": "No pre-ordered items",
+      "item": "Item",
+      "quantity": "Quantity",
+      "variant": "Variant",
+      "noVariant": "No variant selected",
+      "notes": "Notes",
+      "remove": "Remove",
+      "addItem": "Add item",
+      "halfHalf": "Half/half",
+      "secondItem": "Second half",
+      "secondVariant": "Second half variant",
+      "noSecondVariant": "No variant selected"
+    }
+  }
+}

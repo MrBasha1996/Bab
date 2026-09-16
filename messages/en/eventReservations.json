@@ -1,0 +1,50 @@
+{
+  "pages": {
+    "listTitle": "Corporate & Event Reservations",
+    "listDescription": "External event and corporate reservation requests",
+    "newTitle": "New Event Reservation",
+    "empty": "No reservations yet",
+    "addReservation": "Add Reservation",
+    "guestCountLabel": "{count} guests"
+  },
+  "form": {
+    "branch": "Branch",
+    "reservationType": "Reservation type",
+    "typeEvent": "Event",
+    "typeCorporate": "Corporate",
+    "companyName": "Company/organization name",
+    "contactName": "Contact name",
+    "contactPhone": "Phone number",
+    "guestCount": "Guest count",
+    "eventDate": "Event date",
+    "notes": "Notes",
+    "save": "Save",
+    "saving": "Saving…",
+    "genericError": "Could not save"
+  },
+  "type": {
+    "event": "Event",
+    "corporate": "Corporate"
+  },
+  "status": {
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "rejected": "Rejected"
+  },
+  "detail": {
+    "reservationType": "Reservation type",
+    "contactName": "Contact name",
+    "contactPhone": "Phone number",
+    "guestCount": "Guest count",
+    "eventDate": "Event date",
+    "notes": "Notes",
+    "status": "Status",
+    "statusPending": "Pending",
+    "statusConfirmed": "Confirmed",
+    "statusRejected": "Rejected",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save"
+  }
+}

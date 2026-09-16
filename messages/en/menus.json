@@ -1,0 +1,107 @@
+{
+  "pages": {
+    "listTitle": "Menus",
+    "listDescription": "Your branches' menus and categories",
+    "newTitle": "New menu",
+    "empty": "No menus yet",
+    "addMenu": "Add menu",
+    "scheduleTitle": "Schedule",
+    "categoriesTitle": "Categories",
+    "addCategory": "Add category",
+    "noCategoriesYet": "No categories yet"
+  },
+  "form": {
+    "branch": "Branch",
+    "nameAr": "Menu name (Arabic)",
+    "nameEn": "Menu name (English)",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save"
+  },
+  "schedule": {
+    "day": "Day",
+    "start": "From",
+    "end": "To",
+    "add": "Add",
+    "alwaysActive": "No schedule — menu is always active",
+    "genericError": "Could not perform action",
+    "invalidTime": "Invalid time",
+    "days": {
+      "sun": "Sunday",
+      "mon": "Monday",
+      "tue": "Tuesday",
+      "wed": "Wednesday",
+      "thu": "Thursday",
+      "fri": "Friday",
+      "sat": "Saturday"
+    }
+  },
+  "category": {
+    "pages": {
+      "newTitle": "New category",
+      "itemsTitle": "Items"
+    },
+    "form": {
+      "nameAr": "Category name (Arabic)",
+      "nameEn": "Category name (English)",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved",
+      "genericError": "Could not save"
+    },
+    "items": {
+      "empty": "No items in this category yet",
+      "addExisting": "Add existing item",
+      "genericError": "Could not perform action"
+    }
+  },
+  "item": {
+    "pages": {
+      "listTitle": "Items",
+      "listDescription": "All menu items across branches",
+      "newTitle": "New item",
+      "empty": "No items yet",
+      "addItem": "Add item"
+    },
+    "branch": "Branch",
+    "nameAr": "Item name (Arabic)",
+    "nameEn": "Item name (English)",
+    "descriptionAr": "Description (Arabic)",
+    "descriptionEn": "Description (English)",
+    "price": "Price",
+    "calories": "Calories",
+    "isSplittable": "Splittable (half/half)",
+    "categories": "Categories",
+    "allergens": "Allergens",
+    "variants": "Variants",
+    "variantNameAr": "Name (Arabic)",
+    "variantNameEn": "Name (English)",
+    "addVariant": "Add",
+    "optionGroups": "Option groups",
+    "groupNameAr": "Group name (Arabic)",
+    "groupNameEn": "Group name (English)",
+    "required": "Required",
+    "minSelect": "Min select",
+    "maxSelect": "Max select",
+    "valueNameAr": "Name (Arabic)",
+    "valueNameEn": "Name (English)",
+    "addValue": "Add value",
+    "addOptionGroup": "Add group",
+    "optionGroupNeedsValue": "Add at least one value",
+    "optionGroupRangeInvalid": "Max select must be greater than or equal to min select",
+    "needsCategory": "Select at least one category",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save",
+    "coverImage": "Cover photo",
+    "uploadImage": "Upload image",
+    "changeImage": "Change photo",
+    "uploading": "Uploading…",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "visible": "Visible",
+    "hidden": "Hidden"
+  }
+}

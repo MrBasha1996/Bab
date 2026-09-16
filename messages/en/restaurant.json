@@ -1,0 +1,26 @@
+{
+  "onboarding": {
+    "title": "Create your restaurant",
+    "description": "Set up your restaurant profile to start adding branches and menus",
+    "nameAr": "Restaurant name (Arabic)",
+    "nameEn": "Restaurant name (English)",
+    "submit": "Create restaurant",
+    "submitting": "Creating…",
+    "genericError": "Could not create restaurant"
+  },
+  "settings": {
+    "title": "Restaurant settings",
+    "nameAr": "Restaurant name (Arabic)",
+    "nameEn": "Restaurant name (English)",
+    "aboutAr": "About (Arabic)",
+    "aboutEn": "About (English)",
+    "heroImageTitle": "Hero image (homepage banner)",
+    "uploadImage": "Upload image",
+    "changeImage": "Change image",
+    "uploading": "Uploading…",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "pages": {
+    "listTitle": "حجوزات المناسبات والشركات",
+    "listDescription": "طلبات حجز المناسبات والفعاليات الخارجية",
+    "newTitle": "حجز مناسبة جديد",
+    "empty": "لا توجد حجوزات بعد",
+    "addReservation": "إضافة حجز",
+    "guestCountLabel": "{count} ضيف"
+  },
+  "form": {
+    "branch": "الفرع",
+    "reservationType": "نوع الحجز",
+    "typeEvent": "مناسبة",
+    "typeCorporate": "شركات",
+    "companyName": "اسم الجهة/الشركة",
+    "contactName": "اسم المسؤول",
+    "contactPhone": "رقم الهاتف",
+    "guestCount": "عدد الضيوف",
+    "eventDate": "تاريخ المناسبة",
+    "notes": "ملاحظات",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "genericError": "تعذّر الحفظ"
+  },
+  "type": {
+    "event": "مناسبة",
+    "corporate": "شركات"
+  },
+  "status": {
+    "pending": "قيد المراجعة",
+    "confirmed": "مؤكد",
+    "rejected": "مرفوض"
+  },
+  "detail": {
+    "reservationType": "نوع الحجز",
+    "contactName": "اسم المسؤول",
+    "contactPhone": "رقم الهاتف",
+    "guestCount": "عدد الضيوف",
+    "eventDate": "تاريخ المناسبة",
+    "notes": "ملاحظات",
+    "status": "الحالة",
+    "statusPending": "قيد المراجعة",
+    "statusConfirmed": "مؤكد",
+    "statusRejected": "مرفوض",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ"
+  }
+}

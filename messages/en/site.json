@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "branches": "Branches",
+    "reserve": "Reserve a table",
+    "events": "Corporate & events",
+    "contact": "Contact us"
+  },
+  "home": {
+    "heroCta": "Reserve a table",
+    "heroSecondaryCta": "Corporate & events",
+    "branchesEyebrow": "Our branches",
+    "branchesTitle": "Wherever you are, we're nearby",
+    "noBranches": "No branches yet",
+    "ctaTitle": "Ready for an unforgettable experience?",
+    "ctaDescription": "Reserve your table now and our team will reach out to confirm"
+  },
+  "contact": {
+    "title": "Contact us",
+    "description": "Send your inquiry or complaint and our team will get back to you",
+    "branch": "Branch",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email (optional)",
+    "subject": "Subject (optional)",
+    "message": "Message",
+    "submit": "Send",
+    "submitting": "Sending…",
+    "success": "Your message has been sent, thank you for reaching out",
+    "genericError": "Could not send, please try again"
+  },
+  "reserve": {
+    "title": "Reserve a table",
+    "description": "Book your table and we'll confirm your reservation shortly",
+    "branch": "Branch",
+    "name": "Name",
+    "phone": "Phone",
+    "partySize": "Party size",
+    "time": "Reservation time",
+    "date": "Date",
+    "pickDate": "Pick a date",
+    "selectTime": "Select a time",
+    "notes": "Notes (optional)",
+    "submit": "Send reservation request",
+    "submitting": "Sending…",
+    "success": "Your reservation request has been received, we'll contact you to confirm",
+    "genericError": "Could not send, please try again",
+    "confirmationTitle": "Reservation request sent",
+    "confirmationDescription": "We've received your request, our team will contact you to confirm",
+    "confirmationBranch": "Branch",
+    "confirmationDateTime": "Date & time",
+    "confirmationPartySize": "Party size",
+    "confirmationName": "Name",
+    "confirmationNew": "Make another reservation"
+  },
+  "menu": {
+    "title": "Our menu",
+    "description": "Browse our full menu",
+    "selectBranch": "Branch"
+  },
+  "events": {
+    "title": "Corporate & events booking",
+    "description": "For external events and corporate reservations",
+    "branch": "Branch",
+    "type": "Reservation type",
+    "typeEvent": "Event",
+    "typeCorporate": "Corporate",
+    "companyName": "Company/entity name (optional)",
+    "contactName": "Contact name",
+    "contactPhone": "Phone number",
+    "guestCount": "Guest count",
+    "eventDate": "Event date",
+    "notes": "Notes (optional)",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "success": "Your request has been received, our team will contact you to confirm the details",
+    "genericError": "Could not send, please try again"
+  }
+}

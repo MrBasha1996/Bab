@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "listTitle": "الفروع",
+    "listDescription": "فروع مطعمك",
+    "newTitle": "فرع جديد",
+    "empty": "لا توجد فروع بعد",
+    "addBranch": "إضافة فرع"
+  },
+  "form": {
+    "nameAr": "اسم الفرع (عربي)",
+    "nameEn": "اسم الفرع (إنجليزي)",
+    "addressAr": "العنوان (عربي)",
+    "addressEn": "العنوان (إنجليزي)",
+    "phone": "الهاتف",
+    "googleReviewsUrl": "رابط تقييم قوقل مابس",
+    "googleMapsUrl": "رابط خريطة الفرع",
+    "googleMapsUrlHint": "من خرائط جوجل: مشاركة > تضمين خريطة (Embed a map)، ثم انسخ رابط الـ src فقط",
+    "timezone": "المنطقة الزمنية",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "cancel": "إلغاء",
+    "edit": "تعديل",
+    "genericError": "تعذّر الحفظ"
+  }
+}

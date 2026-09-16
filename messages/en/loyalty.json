@@ -1,0 +1,126 @@
+{
+  "pages": {
+    "settingsTab": "Settings",
+    "redemptionsTab": "Redemptions",
+    "submissionsTab": "Receipt Log",
+    "settingsTitle": "Loyalty Settings",
+    "settingsDescription": "Points conversion rate, tiers, and redeemable rewards",
+    "redemptionsTitle": "Reward Redemption Requests",
+    "redemptionsDescription": "Customer requests to redeem points for rewards",
+    "submissionsTitle": "Loyalty Receipt Log",
+    "submissionsDescription": "All uploaded receipt images, extracted amount, and points awarded (audit only)",
+    "empty": "No data yet"
+  },
+  "settings": {
+    "pointsPerCurrencyUnit": "Points per currency unit",
+    "pointsPerCurrencyUnitHint": "Example: 1 means one point per riyal of the receipt total",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "genericError": "Could not save"
+  },
+  "tiers": {
+    "title": "Loyalty Tiers",
+    "empty": "No tiers yet",
+    "nameAr": "Name (Arabic)",
+    "nameEn": "Name (English)",
+    "minPoints": "Minimum points",
+    "minPointsValue": "{points} points and up",
+    "add": "Add",
+    "delete": "Delete",
+    "genericError": "Could not save"
+  },
+  "rewards": {
+    "title": "Redeemable Rewards",
+    "empty": "No rewards yet",
+    "nameAr": "Name (Arabic)",
+    "nameEn": "Name (English)",
+    "pointsCost": "Points cost",
+    "pointsCostValue": "{points} points",
+    "add": "Add",
+    "delete": "Delete",
+    "genericError": "Could not save"
+  },
+  "redemptions": {
+    "member": "Customer",
+    "reward": "Reward",
+    "pointsSpent": "Points spent",
+    "status": "Status",
+    "createdAt": "Date",
+    "statusPending": "Pending",
+    "statusFulfilled": "Fulfilled",
+    "statusCancelled": "Cancelled",
+    "genericError": "Could not update"
+  },
+  "submissions": {
+    "member": "Customer",
+    "branch": "Branch",
+    "amount": "Extracted amount",
+    "invoiceNumber": "Invoice number",
+    "pointsAwarded": "Points awarded",
+    "statusLabel": "Status",
+    "createdAt": "Date",
+    "status": {
+      "pending_ocr": "Processing",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    }
+  },
+  "auth": {
+    "title": "Loyalty Program",
+    "signInWithGoogle": "Sign in with Google",
+    "signingIn": "Redirecting…",
+    "phoneEntryTitle": "Your phone number",
+    "phoneEntryHint": "Enter your phone number to link it to your loyalty account",
+    "phonePlaceholder": "Phone number (e.g. 05xxxxxxxx)",
+    "invalidPhone": "Please enter a valid Saudi phone number",
+    "confirmPhone": "Confirm",
+    "saving": "Saving…"
+  },
+  "customer": {
+    "balance": "Your points balance",
+    "currentTier": "Current tier: {tier}",
+    "nextTier": "{points} points to reach {tier}",
+    "qrTitle": "Your balance code",
+    "qrHint": "Show this code to staff when requesting a discount or redeeming a reward",
+    "uploadReceipt": "Upload your receipt to earn points",
+    "uploadReceiptHint": "The amount is extracted automatically from the image",
+    "submit": "Submit",
+    "submitting": "Submitting…",
+    "receiptSubmitted": "Receipt submitted and points awarded",
+    "rewards": "Available rewards",
+    "noRewards": "No rewards available yet",
+    "pointsCost": "{points} points",
+    "redeem": "Redeem",
+    "redeemed": "Redeemed successfully",
+    "history": "Your points history",
+    "noHistory": "No points activity yet",
+    "earnStatus": {
+      "pending_ocr": "Receipt processing",
+      "approved": "Receipt points",
+      "rejected": "Receipt rejected"
+    },
+    "redeemStatus": {
+      "pending": "Redemption pending",
+      "fulfilled": "Reward redeemed",
+      "cancelled": "Redemption cancelled"
+    },
+    "genericError": "Something went wrong, please retry"
+  },
+  "scan": {
+    "title": "Customer points balance",
+    "pointsLabel": "points",
+    "currentTier": "Tier: {tier}",
+    "redeemTitle": "Deduct a reward from balance",
+    "redeemNow": "Deduct",
+    "redeemConfirm": "Redeem \"{reward}\" for {points} points from the customer's balance?",
+    "redeemed": "Deducted from the customer's balance",
+    "noRewards": "No rewards available yet",
+    "pendingRedemptions": "Pending redemption requests",
+    "noPending": "No pending redemption requests",
+    "pointsCost": "{points} points",
+    "fulfill": "Fulfill",
+    "fulfilled": "Reward marked as fulfilled",
+    "genericError": "Could not update"
+  }
+}

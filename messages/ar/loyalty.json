@@ -1,0 +1,126 @@
+{
+  "pages": {
+    "settingsTab": "الإعدادات",
+    "redemptionsTab": "طلبات الاستبدال",
+    "submissionsTab": "سجل الفواتير",
+    "settingsTitle": "إعدادات الولاء",
+    "settingsDescription": "معدّل تحويل النقاط، المستويات، والمكافآت القابلة للاستبدال",
+    "redemptionsTitle": "طلبات استبدال المكافآت",
+    "redemptionsDescription": "طلبات العملاء لاستبدال نقاطهم بمكافآت",
+    "submissionsTitle": "سجل فواتير الولاء",
+    "submissionsDescription": "كل صور الفواتير المرفوعة والمبلغ المستخرَج والنقاط الممنوحة (للتدقيق فقط)",
+    "empty": "لا بيانات بعد"
+  },
+  "settings": {
+    "pointsPerCurrencyUnit": "عدد النقاط لكل ريال",
+    "pointsPerCurrencyUnitHint": "مثال: 1 يعني نقطة واحدة لكل ريال من قيمة الفاتورة",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم الحفظ",
+    "genericError": "تعذّر الحفظ"
+  },
+  "tiers": {
+    "title": "مستويات الولاء",
+    "empty": "لا مستويات بعد",
+    "nameAr": "الاسم بالعربية",
+    "nameEn": "الاسم بالإنجليزية",
+    "minPoints": "الحد الأدنى للنقاط",
+    "minPointsValue": "{points} نقطة فأكثر",
+    "add": "إضافة",
+    "delete": "حذف",
+    "genericError": "تعذّر الحفظ"
+  },
+  "rewards": {
+    "title": "المكافآت القابلة للاستبدال",
+    "empty": "لا مكافآت بعد",
+    "nameAr": "الاسم بالعربية",
+    "nameEn": "الاسم بالإنجليزية",
+    "pointsCost": "تكلفة النقاط",
+    "pointsCostValue": "{points} نقطة",
+    "add": "إضافة",
+    "delete": "حذف",
+    "genericError": "تعذّر الحفظ"
+  },
+  "redemptions": {
+    "member": "العميل",
+    "reward": "المكافأة",
+    "pointsSpent": "النقاط المستخدَمة",
+    "status": "الحالة",
+    "createdAt": "التاريخ",
+    "statusPending": "قيد الانتظار",
+    "statusFulfilled": "تم التسليم",
+    "statusCancelled": "ملغى",
+    "genericError": "تعذّر التحديث"
+  },
+  "submissions": {
+    "member": "العميل",
+    "branch": "الفرع",
+    "amount": "المبلغ المستخرَج",
+    "invoiceNumber": "رقم الفاتورة",
+    "pointsAwarded": "النقاط الممنوحة",
+    "statusLabel": "الحالة",
+    "createdAt": "التاريخ",
+    "status": {
+      "pending_ocr": "قيد المعالجة",
+      "approved": "مقبولة",
+      "rejected": "مرفوضة"
+    }
+  },
+  "auth": {
+    "title": "برنامج الولاء",
+    "signInWithGoogle": "الدخول بحساب Google",
+    "signingIn": "جارٍ التحويل…",
+    "phoneEntryTitle": "رقم هاتفك",
+    "phoneEntryHint": "أدخل رقم هاتفك لربطه بحساب الولاء الخاص بك",
+    "phonePlaceholder": "رقم الهاتف (مثال: 05xxxxxxxx)",
+    "invalidPhone": "الرجاء إدخال رقم هاتف سعودي صحيح",
+    "confirmPhone": "تأكيد",
+    "saving": "جارٍ الحفظ…"
+  },
+  "customer": {
+    "balance": "رصيدك من النقاط",
+    "currentTier": "مستواك الحالي: {tier}",
+    "nextTier": "تحتاج {points} نقطة للوصول إلى مستوى {tier}",
+    "qrTitle": "رمز رصيدك",
+    "qrHint": "اعرض هذا الرمز للموظف عند طلب الخصم أو استبدال مكافأة",
+    "uploadReceipt": "ارفع صورة فاتورتك لكسب نقاط",
+    "uploadReceiptHint": "يُستخرج المبلغ آلياً من الصورة",
+    "submit": "إرسال",
+    "submitting": "جارٍ الإرسال…",
+    "receiptSubmitted": "تم إرسال الفاتورة ومنح النقاط",
+    "rewards": "المكافآت المتاحة",
+    "noRewards": "لا مكافآت متاحة حالياً",
+    "pointsCost": "{points} نقطة",
+    "redeem": "استبدال",
+    "redeemed": "تم الاستبدال بنجاح",
+    "history": "سجل نقاطك",
+    "noHistory": "لا حركات نقاط بعد",
+    "earnStatus": {
+      "pending_ocr": "فاتورة قيد المعالجة",
+      "approved": "نقاط فاتورة",
+      "rejected": "فاتورة مرفوضة"
+    },
+    "redeemStatus": {
+      "pending": "استبدال قيد الانتظار",
+      "fulfilled": "استبدال مكافأة",
+      "cancelled": "استبدال ملغى"
+    },
+    "genericError": "حدث خطأ، حاول مجدداً"
+  },
+  "scan": {
+    "title": "رصيد نقاط العميل",
+    "pointsLabel": "نقطة",
+    "currentTier": "المستوى: {tier}",
+    "redeemTitle": "خصم مكافأة من الرصيد",
+    "redeemNow": "خصم",
+    "redeemConfirm": "استبدال \"{reward}\" مقابل {points} نقطة من رصيد العميل؟",
+    "redeemed": "تم الخصم من رصيد العميل",
+    "noRewards": "لا مكافآت متاحة حالياً",
+    "pendingRedemptions": "طلبات استبدال قيد الانتظار",
+    "noPending": "لا طلبات استبدال قيد الانتظار",
+    "pointsCost": "{points} نقطة",
+    "fulfill": "تسليم",
+    "fulfilled": "تم تسليم المكافأة",
+    "genericError": "تعذّر التحديث"
+  }
+}
