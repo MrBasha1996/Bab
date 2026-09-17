@@ -17,9 +17,18 @@
   "loyaltyPoints": "{points} نقطة ولاء",
   "gateway": {
     "menu": "فتح المنيو",
+    "menuDesc": "تصفّح الأطباق وأضفها لطلبك",
     "complaint": "شكوى أو اقتراح",
+    "complaintDesc": "نسمعك لتحسين تجربتك",
     "rating": "قيّم تجربتك",
-    "location": "موقعنا"
+    "ratingDesc": "شاركنا رأيك في ثوانٍ",
+    "location": "موقعنا",
+    "welcomeTitle": "أهلاً بك في",
+    "tableLabel": "طاولتك",
+    "branchLabel": "الفرع",
+    "scanPrompt": "أختر أحد الخيارات بالأسفل لبدء تجربتك",
+    "loyalty": "برنامج الولاء",
+    "loyaltyDesc": "اكسب النقاط واستبدلها بمكافآت"
   },
   "rating": {
     "title": "قيّم تجربتك",

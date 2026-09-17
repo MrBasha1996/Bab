@@ -52,5 +52,43 @@
     "restaurantSettings": "Restaurant settings",
     "openMenu": "Open menu",
     "menu": "Menu"
+  },
+  "navGroups": {
+    "operations": "Operations",
+    "catalog": "Catalog",
+    "engagement": "Engagement",
+    "insights": "Insights",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "greetingMorning": "Good morning",
+    "greetingAfternoon": "Good afternoon",
+    "greetingEvening": "Good evening",
+    "subtitle": "A quick look at your restaurant's performance today",
+    "statReservationsToday": "Reservations today",
+    "statActiveTables": "Active tables",
+    "statMenuItems": "Items on the menu",
+    "statNewComplaints": "New complaints",
+    "quickActions": "Quick actions",
+    "quickAddReservation": "New reservation",
+    "quickAddReservationDesc": "Add a booking for a customer",
+    "quickAddItem": "New item",
+    "quickAddItemDesc": "Add a dish to the menu",
+    "quickViewMenu": "View menu",
+    "quickViewMenuDesc": "Review the dishes list",
+    "quickQRTables": "Table QR codes",
+    "quickQRTablesDesc": "Manage your tables and their codes",
+    "recentActivity": "Recent activity",
+    "activityNewReservation": "New reservation from {name} at {time}",
+    "activityNewComplaint": "New complaint from table {table}",
+    "activityNewItem": "New item added: {item}",
+    "activityNewInquiry": "New inquiry from {name}",
+    "viewAll": "View all",
+    "noActivity": "No recent activity yet",
+    "weeklyReservations": "Weekly reservations",
+    "topItems": "Top items",
+    "branchPerformance": "Branch performance",
+    "tip": "Tip of the day",
+    "tipBody": "Enable the loyalty points system from the Loyalty page to increase repeat customers."
   }
 }
