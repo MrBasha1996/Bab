@@ -53,12 +53,16 @@ export async function extractReceiptAmount(
                 type: "text",
                 text:
                   `هذه صورة فاتورة مطعم. اسم المطعم المتوقَّع هو "${expectedRestaurantNameAr}" ` +
-                  `(بالإنجليزية: "${expectedRestaurantNameEn}"). أجب بثلاثة أسطر بالضبط، سطر لكل بند، ` +
-                  "بلا أي نص إضافي قبلها أو بعدها:\n" +
-                  "السطر 1: هل اسم المطعم المطبوع على الفاتورة يطابق الاسم المتوقَّع أعلاه؟ اكتب YES أو NO فقط.\n" +
-                  "السطر 2: المبلغ الإجمالي النهائي (Total/المجموع شامل الضريبة) كرقم عشري فقط بلا رمز عملة " +
+                  `(بالإنجليزية: "${expectedRestaurantNameEn}"). ملاحظة: شعار اسم المطعم على الفواتير ` +
+                  "غالباً مكتوب بخط عربي كاليغرافي/فني مُزخرف يصعب قراءته حرفياً — اعتبر التطابق ناجحاً طالما " +
+                  "الاسم المقروء يماثل الاسم المتوقَّع دلالياً (نفس الكلمات بالمعنى)، حتى لو اختلف الرسم الفني " +
+                  "للحروف أو وجد تشابه بصري بين حروف قريبة الشكل (مثل الباء واللام في خط مزخرف). " +
+                  "أجب بأربعة أسطر بالضبط، سطر لكل بند، بلا أي نص إضافي قبلها أو بعدها:\n" +
+                  "السطر 1: الاسم كما قرأته فعلياً مطبوعاً على الفاتورة (نص عادي، وليس YES/NO)، أو UNKNOWN إن لم يظهر أي اسم مطعم.\n" +
+                  "السطر 2: هل هذا الاسم المقروء يطابق دلالياً الاسم المتوقَّع أعلاه (بالمعايير الموضحة فوق)؟ اكتب YES أو NO فقط.\n" +
+                  "السطر 3: المبلغ الإجمالي النهائي (Total/المجموع شامل الضريبة) كرقم عشري فقط بلا رمز عملة " +
                   "وبلا فواصل آلاف (مثال: 87.50)، أو UNKNOWN إن تعذّر تحديده بثقة.\n" +
-                  'السطر 3: رقم الفاتورة كما هو مكتوب بجانب كلمة "فاتورة#" أو "Invoice" (وليس رقم الطلب ' +
+                  'السطر 4: رقم الفاتورة كما هو مكتوب بجانب كلمة "فاتورة#" أو "Invoice" (وليس رقم الطلب ' +
                   '"الطلب#" أو "Order")، أو UNKNOWN إن تعذّرت قراءته بثقة.',
               },
             ],
@@ -80,14 +84,18 @@ export async function extractReceiptAmount(
       .map((line) => line.trim())
       .filter((line) => line.length > 0);
 
-    const [restaurantMatchLine, amountLine, invoiceNumberLine] = lines;
+    const [readNameLine, restaurantMatchLine, amountLine, invoiceNumberLine] = lines;
 
-    if (!restaurantMatchLine || !amountLine || !invoiceNumberLine) {
+    if (!readNameLine || !restaurantMatchLine || !amountLine || !invoiceNumberLine) {
       return { amount: null, invoiceNumber: null, note: "تعذّر على النظام قراءة الفاتورة من الصورة" };
     }
 
     if (!restaurantMatchLine.toUpperCase().includes("YES")) {
-      return { amount: null, invoiceNumber: null, note: "هذه الفاتورة ليست من هذا المطعم" };
+      return {
+        amount: null,
+        invoiceNumber: null,
+        note: `هذه الفاتورة ليست من هذا المطعم (الاسم المقروء: "${readNameLine}")`,
+      };
     }
 
     if (amountLine.toUpperCase().includes("UNKNOWN")) {

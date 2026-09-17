@@ -17,6 +17,7 @@ export default async function PublicEntryPage({
       resolved={resolved}
       menuHref={`/m/${branchSlug}/t/${qrToken}/menu`}
       complaintHref={`/m/${branchSlug}/t/${qrToken}/complaint`}
+      ratingHref={`/m/${branchSlug}/t/${qrToken}/rating`}
     />
   );
 }

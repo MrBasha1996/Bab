@@ -4,6 +4,8 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { extractReceiptAmount } from "@/lib/ocr/extract-receipt-amount";
 import { normalizeSaudiPhone } from "@/lib/domain/phone";
+import { isRateLimited } from "@/lib/rate-limit";
+import { rateLimitedError } from "@/lib/i18n/action-messages";
 import type { ActionResult } from "@/lib/actions/types";
 
 // يُستدعى من صفحة الولاء العامة بعد تسجيل دخول Google، مع رقم هاتف يُدخله
@@ -41,6 +43,7 @@ export async function submitLoyaltyReceipt(
   if (!(file instanceof File) || file.size === 0) {
     return { success: false, error: "invalid file" };
   }
+  if (await isRateLimited("loyaltyReceipt")) return { success: false, error: await rateLimitedError() };
 
   const bytes = Buffer.from(await file.arrayBuffer());
   const ext = file.name.split(".").pop() ?? "jpg";

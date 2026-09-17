@@ -1,6 +1,7 @@
 "use server";
 import { createClient } from "@/lib/supabase/server";
-import { invalidDataError } from "@/lib/i18n/action-messages";
+import { invalidDataError, rateLimitedError } from "@/lib/i18n/action-messages";
+import { isRateLimited } from "@/lib/rate-limit";
 import {
   publicReservationSchema,
   type PublicReservationInput,
@@ -13,6 +14,7 @@ import type { ActionResult } from "@/lib/actions/types";
 export async function submitPublicReservation(input: PublicReservationInput): Promise<ActionResult> {
   const parsed = publicReservationSchema.safeParse(input);
   if (!parsed.success) return { success: false, error: await invalidDataError() };
+  if (await isRateLimited("publicWrite")) return { success: false, error: await rateLimitedError() };
 
   const supabase = await createClient();
   const { error } = await supabase.rpc("create_public_reservation", {

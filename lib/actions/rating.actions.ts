@@ -2,22 +2,20 @@
 import { createClient } from "@/lib/supabase/server";
 import { invalidDataError, rateLimitedError } from "@/lib/i18n/action-messages";
 import { isRateLimited } from "@/lib/rate-limit";
-import { complaintSchema, type ComplaintInput } from "@/lib/validation/complaint.schema";
+import { ratingSchema, type RatingInput } from "@/lib/validation/rating.schema";
 import type { ActionResult } from "@/lib/actions/types";
 
-export async function submitComplaint(input: ComplaintInput): Promise<ActionResult> {
-  const parsed = complaintSchema.safeParse(input);
+export async function submitRating(input: RatingInput): Promise<ActionResult> {
+  const parsed = ratingSchema.safeParse(input);
   if (!parsed.success) return { success: false, error: await invalidDataError() };
   if (await isRateLimited("publicWrite")) return { success: false, error: await rateLimitedError() };
 
   const supabase = await createClient();
-  const { error } = await supabase.from("complaints").insert({
+  const { error } = await supabase.from("branch_ratings").insert({
     branch_id: parsed.data.branchId,
     table_id: parsed.data.tableId,
-    type: parsed.data.type,
-    message: parsed.data.message,
-    customer_name: parsed.data.customerName || null,
-    customer_phone: parsed.data.customerPhone || null,
+    stars: parsed.data.stars,
+    comment: parsed.data.comment || null,
   });
 
   if (error) return { success: false, error: error.message };

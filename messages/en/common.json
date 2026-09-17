@@ -29,6 +29,14 @@
     "branch_manager": "Branch Manager",
     "staff": "Staff"
   },
+  "errors": {
+    "errorTitle": "Something went wrong",
+    "errorDescription": "This action couldn't be completed. Try again, or go back to the dashboard if the problem continues.",
+    "retry": "Try again",
+    "goHome": "Go to dashboard",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The link you opened is incorrect or the page has moved."
+  },
   "nav": {
     "dashboard": "Dashboard",
     "branches": "Branches",
@@ -40,6 +48,7 @@
     "inquiries": "Inquiries & Complaints",
     "complaints": "Table Complaints & Suggestions",
     "loyalty": "Loyalty",
+    "analytics": "Analytics",
     "restaurantSettings": "Restaurant settings",
     "openMenu": "Open menu",
     "menu": "Menu"

@@ -16,6 +16,7 @@ export default async function TabletEntryPage({
       resolved={resolved}
       menuHref={`/m/${branchSlug}/t/${qrToken}/tablet/menu`}
       complaintHref={`/m/${branchSlug}/t/${qrToken}/complaint`}
+      ratingHref={`/m/${branchSlug}/t/${qrToken}/rating`}
       tablet
     />
   );

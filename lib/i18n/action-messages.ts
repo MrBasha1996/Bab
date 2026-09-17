@@ -31,3 +31,7 @@ export async function actionMsg(key: string, values?: Values): Promise<string> {
 export async function invalidDataError(): Promise<string> {
   return actionMsg("common.invalidData");
 }
+
+export async function rateLimitedError(): Promise<string> {
+  return actionMsg("common.rateLimited");
+}

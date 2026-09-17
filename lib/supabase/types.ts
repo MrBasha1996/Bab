@@ -482,6 +482,26 @@ export interface Database {
         Update: Partial<Database["public"]["Tables"]["complaints"]["Insert"]>;
         Relationships: [];
       };
+      branch_ratings: {
+        Row: {
+          id: string;
+          branch_id: string;
+          table_id: string | null;
+          stars: number;
+          comment: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          branch_id: string;
+          table_id?: string | null;
+          stars: number;
+          comment?: string | null;
+          created_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["branch_ratings"]["Insert"]>;
+        Relationships: [];
+      };
       reservation_preorder_items: {
         Row: {
           id: string;

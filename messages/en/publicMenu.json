@@ -18,7 +18,18 @@
   "gateway": {
     "menu": "Open the menu",
     "complaint": "Complaint or suggestion",
-    "review": "Rate us on Google Maps"
+    "rating": "Rate your experience",
+    "location": "Find us"
+  },
+  "rating": {
+    "title": "Rate your experience",
+    "stars": "Rating",
+    "comment": "Your comment (optional)",
+    "submit": "Submit rating",
+    "submitting": "Submitting…",
+    "success": "Thanks for your rating!",
+    "googleCta": "Also rate us on Google Maps",
+    "starsRequired": "Please choose a star rating"
   },
   "complaint": {
     "title": "Complaint or suggestion",
@@ -41,6 +52,11 @@
     "chooseUpTo": "Choose up to {count}",
     "allergens": "Allergens",
     "close": "Close"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "This page couldn't load. Try again.",
+    "retry": "Try again"
   },
   "language": {
     "ar": "عربي",

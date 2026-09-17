@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "title": "Analytics",
+    "description": "Activity across all your branches in the last 30 days",
+    "days": "Last 30 days"
+  },
+  "stats": {
+    "scans": "QR scans",
+    "views": "Item views",
+    "activeItems": "Items viewed"
+  },
+  "topItems": {
+    "title": "Most viewed",
+    "description": "Items opened most often from menu pages",
+    "empty": "No views recorded yet",
+    "rank": "#",
+    "item": "Item",
+    "branch": "Branch",
+    "views": "Views"
+  },
+  "peakHours": {
+    "title": "Peak hours",
+    "description": "Total scans and views by hour of day (each branch's local time)",
+    "empty": "Not enough data yet"
+  }
+}

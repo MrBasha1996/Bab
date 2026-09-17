@@ -13,6 +13,7 @@ export interface ResolvedTable {
     timezone: string;
     slug: string;
     googleReviewsUrl: string | null;
+    googleMapsUrl: string | null;
   };
   table: { id: string; labelAr: string; labelEn: string };
   qrCodeId: string;
@@ -23,7 +24,7 @@ export async function resolveTable(branchSlug: string, qrToken: string): Promise
 
   const { data: branch } = await supabase
     .from("branches")
-    .select("id, restaurant_id, name_ar, name_en, timezone, slug, google_reviews_url")
+    .select("id, restaurant_id, name_ar, name_en, timezone, slug, google_reviews_url, google_maps_url")
     .eq("slug", branchSlug)
     .is("deleted_at", null)
     .single();
@@ -66,6 +67,7 @@ export async function resolveTable(branchSlug: string, qrToken: string): Promise
       timezone: branch.timezone,
       slug: branch.slug,
       googleReviewsUrl: branch.google_reviews_url,
+      googleMapsUrl: branch.google_maps_url,
     },
     table: { id: table.id, labelAr: table.label_ar, labelEn: table.label_en },
     qrCodeId: qr.id,

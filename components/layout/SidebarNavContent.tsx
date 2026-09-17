@@ -15,6 +15,7 @@ import {
   Gift,
   MessageSquare,
   MessageSquareWarning,
+  BarChart3,
   Settings,
 } from "lucide-react"
 
@@ -31,6 +32,7 @@ export const NAV_ITEMS = [
   { href: "/inquiries", labelKey: "nav.inquiries", icon: MessageSquare },
   { href: "/complaints", labelKey: "nav.complaints", icon: MessageSquareWarning },
   { href: "/loyalty", labelKey: "nav.loyalty", icon: Gift },
+  { href: "/analytics", labelKey: "nav.analytics", icon: BarChart3 },
   { href: "/restaurant", labelKey: "nav.restaurantSettings", icon: Settings },
 ] as const
 

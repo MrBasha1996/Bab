@@ -218,7 +218,7 @@
 - [x] مفاتيح ترجمة جديدة: `common.{createdAt,from,to}` + `menus.item.{visible,hidden}` (ar/en)
 - [x] تحقق: `next build` + `eslint` نظيفان (0 أخطاء/تحذيرات)
 
-## المرحلة 14 — نظام الولاء (Loyalty) — نطاق أولي فقط ✅ (منجزة 2026-09-15، بانتظار إعداد المستخدم لـANTHROPIC_API_KEY ومزوّد SMS للاستخدام الحي)
+## المرحلة 14 — نظام الولاء (Loyalty) — نطاق أولي فقط ✅ (منجزة 2026-09-15، مُحدَّثة 14.6: Google Sign-in + OpenRouter بدل Phone+OTP/Anthropic — مفتاح OpenRouter مُهيَّأ فعلياً، تدفّق Google OAuth الحي لم يُختبَر بمتصفح فعلي بعد)
 
 **قرارات المستخدم المؤكَّدة (2026-09-15)**:
 - النقاط تُحسب من قيمة فاتورة يرفع العميل صورتها بنفسه، والمبلغ يُستخرَج **آلياً** من الصورة (لا مراجعة يدوية إلزامية قبل منح النقاط).
@@ -325,7 +325,29 @@
 
 ---
 
+## مرحلة تحسين وجاهزية الإنتاج — I (إصلاحات حرجة قبل أي إنتاج فعلي)
+
+مرجع: `C:\Users\HP\.claude\plans\shimmering-swimming-hummingbird.md`
+
+- [ ] تحديث `NEXT_PUBLIC_SITE_URL` بالدومين الحقيقي — **مؤجَّل**: لا دومين محجوز بعد (تأكيد المستخدم)
+- [x] إضافة RLS policies صريحة على bucket `menu-images` (migration جديدة)
+- [x] حل تعارض ترقيم `0022` بإعادة تسمية `0022_loyalty_staff_redeem.sql` إلى `0024_loyalty_staff_redeem.sql` (تأكيد المستخدم: كلا الملفين مُطبَّق فعلاً على main، الأمان تحسين تسمية في المستودع فقط)
+- [x] تصحيح عنوان "المرحلة 14" في هذا الملف ليعكس الوضع الفعلي (Google Sign-in بدل Phone+OTP، OpenRouter بدل Anthropic — كلاهما تم استبداله فعلياً في 14.6)
+
+---
+
 ## Review (يُملأ بعد الانتهاء)
+
+### مرحلة تحسين وجاهزية الإنتاج — I (2026-09-16)
+
+نُفِّذت 3 من 4 بنود (البند الأول مؤجَّل بانتظار حجز دومين):
+
+1. **`NEXT_PUBLIC_SITE_URL`**: مؤجَّل — لا دومين محجوز بعد، بلا تغيير.
+2. **RLS على `menu-images`**: هجرة جديدة `0025_menu_images_storage_rls.sql` تضيف policy قراءة صريحة. اكتشاف مهم أثناء التنفيذ: لم تكن هناك ثغرة كتابة فعلية أصلاً — `storage.objects` تحمل RLS مفعّلة افتراضياً في Supabase بلا policies، فالرفض ضمني لـanon/authenticated، وكل الرفع الحالي يمر عبر `service_role` (`createAdminClient`) في `item.actions.ts`/`restaurant.actions.ts` الذي يتجاوز RLS أصلاً. الهجرة توثّق السلوك صراحة (دفاع بالعمق) لا تسدّ ثغرة حقيقية.
+3. **تعارض ترقيم `0022`**: أُعيدت تسمية `0022_loyalty_staff_redeem.sql` إلى `0024_loyalty_staff_redeem.sql` (git mv) بتأكيد المستخدم أن كلا الملفين مُطبَّق فعلاً على main. **تنبيه**: هذا تصحيح على مستوى المستودع فقط (تسمية الملف) — لا يلمس جدول `schema_migrations` على أي بيئة مُطبَّقة بالفعل؛ لو استُخدمت أداة `supabase migration` لمزامنة بيئة جديدة تماماً من الصفر فسيعمل الترتيب الجديد بسلاسة، لكن بيئة قديمة تتبّعت الاسم الأصلي لن تتأثر رجعياً (لا حاجة، الهجرة نفسها مطبَّقة فعلاً بنفس المحتوى).
+4. **عنوان المرحلة 14**: صُحِّح ليعكس استبدال 14.6 الفعلي (Google Sign-in بدل Phone+OTP، OpenRouter بدل Anthropic) بدل النص القديم الذي كان يذكر انتظار مفاتيح لم تعد الميزة تعتمد عليها.
+
+تحقق: `npm run lint` نظيف (0 أخطاء/تحذيرات). لم يُلمس أي كود تطبيق (`lib/`, `app/`, `components/`) — التغييرات كلها migrations + توثيق.
 
 ### المرحلة 14.6 (2026-09-16)
 
@@ -820,8 +842,168 @@ Pre-order أثناء الحجز: جدول جديد `reservation_preorder_items` 
 
 المستخدم صحّح التصميم: لا يُفترض أن يبادر العميل بالاستبدال من هاتفه ثم يعرض QR للتأكيد فقط — بل **الموظف نفسه يخصم النقاط مباشرة** من صفحة المسح بعد قراءة رصيد العميل عبر QR.
 
-- هجرة جديدة `0022_loyalty_staff_redeem.sql`: دالة `redeem_loyalty_reward_for_member(p_member_id, p_reward_id)` (security definer) — يستدعيها الموظف (شرط `has_capability('manage_loyalty')` ونفس مطعم `auth_restaurant_id()`)، تخصم النقاط ذرّياً وتُدرج سجل استبدال بحالة `fulfilled` مباشرة (بخلاف `redeem_loyalty_reward` الأصلية المقيّدة بجلسة العميل نفسه عبر `auth.uid()`، التي بقيت كما هي للاستخدام الذاتي من تطبيق العميل). **طُبِّقت فعلياً على القاعدة الحية** بعد تأكيد المستخدم.
+- هجرة جديدة `0024_loyalty_staff_redeem.sql` (أُعيدت تسميتها من `0022` لتعارض ترقيم مع `0022_loyalty_receipt_invoice_number.sql` — راجع مرحلة تحسين وجاهزية الإنتاج I): دالة `redeem_loyalty_reward_for_member(p_member_id, p_reward_id)` (security definer) — يستدعيها الموظف (شرط `has_capability('manage_loyalty')` ونفس مطعم `auth_restaurant_id()`)، تخصم النقاط ذرّياً وتُدرج سجل استبدال بحالة `fulfilled` مباشرة (بخلاف `redeem_loyalty_reward` الأصلية المقيّدة بجلسة العميل نفسه عبر `auth.uid()`، التي بقيت كما هي للاستخدام الذاتي من تطبيق العميل). **طُبِّقت فعلياً على القاعدة الحية** بعد تأكيد المستخدم.
 - Server action جديد `redeemLoyaltyRewardForMember` في `loyalty.actions.ts`.
 - مكوّن جديد `StaffRedeemRewards.tsx` (client) في صفحة `/loyalty/scan/[memberId]`: قائمة المكافآت الفعّالة لهذا المطعم مع زر "خصم" وتأكيد (`confirm`) قبل التنفيذ — بجانب قسم "طلبات الاستبدال المعلّقة" الذي بقي كما هو لدعم تدفق العميل الذاتي القديم أيضاً.
 - `lib/supabase/types.ts` حُدِّث يدوياً بالدالة الجديدة في `Functions`.
 - التحقق: `npm run build` + `npm run lint` نظيفان، ثم `npx tsx scripts/migrate.ts` طبّق `0022` بنجاح على القاعدة الحية.
+
+### تصحيح — رفض فواتير حقيقية بسبب مطابقة اسم مطعم صارمة (2026-09-16)
+
+المستخدم زوَّدني بصور فواتير حقيقية جديدة من "باب البلد" فشل رفعها في `/m/[branch]/loyalty` (رسالة رفض عامة بلا تفاصيل). التشخيص: شعار المطعم على الفواتير مكتوب بخط عربي كاليغرافي/فني مُزخرف يصعب تمييز حروفه (حتى أنا قرأته أول مرة "بابل البلد" بدل "باب البلد" المخزَّن فعلياً في `restaurants.name_ar`) — موديل الرؤية على الأرجح يرد `NO` لنفس السبب فتُرفض الفاتورة دون أي أثر تشخيصي.
+
+- `lib/ocr/extract-receipt-amount.ts`: البرومبت أصبح يطلب **أربعة أسطر** بدل ثلاثة — سطر جديد أول يطلب من الموديل كتابة الاسم كما قرأه فعلياً (نص، وليس YES/NO) قبل سطر المطابقة، مع توجيه صريح بالتسامح مع اختلاف الرسم الفني لخط اللوجو المزخرف طالما التطابق دلالي. عند الرفض (`NO`)، `note` المُعادة أصبحت تتضمن الاسم المقروء فعلياً بين قوسين — يجعل أي رفض مستقبلي قابلاً للتشخيص فوراً من `ocr_note` بدل رسالة عامة ثابتة.
+- التحقق: `npx tsc --noEmit` نظيف.
+- **لم يُختبَر حياً بعد** — يحتاج المستخدم إعادة رفع إحدى الفواتير التي فشلت عبر الصفحة العامة ليتأكد أن الرفض (إن استمر) يظهر الآن الاسم المقروء فعلياً، أو أن القبول ينجح مباشرة.
+
+## تحسين صفحة البوابة (Gateway) — تصميم + تقييم داخلي + خريطة قوقل (2026-09-16)
+
+الطلب: تحسين تصميم صفحة اختيار "فتح المنيو / شكوى" (`EntryGateway`)، إضافة تقييم، وإضافة خريطة قوقل. تأكيد المستخدم: التقييم = **نظام داخلي (نجوم 1-5 + تعليق تُحفظ في القاعدة) بالإضافة إلى زر توجيه لخرائط قوقل** (وليس فقط رابط خارجي).
+
+اكتشفت أثناء الاستكشاف أن `google_reviews_url` و`google_maps_url` موجودان أصلاً في `branches` (هجرات 0017 و0020) ومستخدَمان في `app/(public)/site/page.tsx`، لكن **غير مربوطين إطلاقاً بمسار QR/Tablet** (`resolveTable` لا يجلب `google_maps_url`، و`EntryGateway` يعرض `google_reviews_url` كرابط خارجي فقط بلا خريطة ولا تقييم داخلي).
+
+- [x] هجرة جديدة `0023_branch_ratings.sql`: جدول `branch_ratings` (id, branch_id, table_id nullable, stars int not null check 1-5, comment text nullable, created_at) + فهرس على branch_id + RLS بنفس نمط `complaints` في 0017 (insert للـanon فقط، select لـauthenticated بصلاحية جديدة `view_ratings` ونطاق `auth_branch_ids()`)
+- [x] `lib/validation/rating.schema.ts`: branchId (uuid), tableId (uuid), stars (int 1-5، رسالة `common.required` عند 0)، comment (اختياري، حد أقصى 1000)
+- [x] `lib/actions/rating.actions.ts`: `submitRating` بنفس نمط `submitComplaint`
+- [x] `lib/domain/resolve-table.ts`: أُضيف `google_maps_url` لاستعلام `branches` وللنوع المُعاد `ResolvedTable.branch`
+- [x] مسار جديد `app/(public)/m/[branchSlug]/t/[qrToken]/rating/page.tsx` + `components/public-menu/RatingForm.tsx` (نجوم 1-5 تفاعلية عبر `lucide-react Star` + تعليق اختياري + إرسال). بعد النجاح: رسالة شكر، ثم إن وُجد `google_reviews_url` يظهر زر ثانوي "قيّمنا أيضاً على خرائط قوقل" (رابط خارجي)
+- [x] `EntryGateway.tsx`: تصميم محسَّن (أيقونة كل خيار داخل دائرة `bg-primary/10`، ظل عند hover)، خيار التقييم أصبح رابطاً داخلياً لصفحة `/rating` الجديدة (بدل الرابط الخارجي المباشر السابق)، وأُضيف قسم خريطة قوقل (iframe) أسفل الأزرار يظهر فقط إن وُجد `google_maps_url` — بنفس نمط الـiframe في `app/(public)/site/page.tsx`. صفحتا QR والـTablet (`page.tsx`, `tablet/page.tsx`) مُرِّر لهما `ratingHref` الجديد
+- [x] ترجمات `messages/{ar,en}/publicMenu.json`: استُبدل مفتاح `gateway.review` بـ`gateway.rating` + `gateway.location`، وأُضيف namespace كامل `rating.*` (title, stars, comment, submit, submitting, success, googleCta, starsRequired)
+- [x] `lib/supabase/types.ts`: أُضيف جدول `branch_ratings` يدوياً (بنفس نمط `complaints`)
+- [x] التحقق: `npm run build` و`npm run lint` نظيفان (لا أخطاء)، وطُبِّقت الهجرة `0023` فعلياً على القاعدة الحية بنجاح (تأكيد مباشر: الجدول موجود في `information_schema.tables`)
+
+**ملاحظة نطاق:** لم أبنِ صفحة إدارية لعرض التقييمات المحفوظة (dashboard) ضمن هذه المهمة — فقط تجربة الضيف + RLS دفاعية جاهزة لصفحة إدارية مستقبلية إن طُلبت.
+
+**مهم — يحتاج إجراء من المستخدم:** فحصت القاعدة الحية، **كل الفروع الخمسة الحالية `google_maps_url` و`google_reviews_url` عندها `null`** — لذلك لن تظهر الخريطة في صفحة البوابة حتى تُعبَّأ من `/branches/[id]` (الحقلان موجودان في `BranchForm.tsx` أصلاً). زر "قيّمنا أيضاً على خرائط قوقل" بعد إرسال التقييم لن يظهر أيضاً بدون `google_reviews_url`.
+
+**ملاحظة جانبية غير مرتبطة بمهمتي:** أثناء تشغيل `scripts/migrate.ts` فشلت هجرة `0024_loyalty_staff_redeem.sql` (موجودة مسبقاً بترقيم مختلف قبل هذه الجلسة، لم ألمسها) بخطأ "function already exists" — على الأرجح لأن الملف أُعيدت تسميته من `0022_...` إلى `0024_...` في تعديلات سابقة غير مرتبطة بمهمتي الحالية، فلم يعد يطابق الاسم المسجَّل في جدول `_migrations`. هجرتي `0023_branch_ratings.sql` طُبِّقت بنجاح **قبل** هذا الفشل وليست السبب فيه. لم أُصلح هذا لأنه خارج نطاق طلبك — أخبرني إن أردت مني معالجته.
+
+## المرحلة II — تحصين أمني تشغيلي (خطة `shimmering-swimming-hummingbird.md`)
+
+مرجع: `C:\Users\HP\.claude\plans\shimmering-swimming-hummingbird.md`. قرارات المستخدم: rate limiting عبر **Upstash Redis** (وليس in-memory)، واختبارات RLS الجديدة تُرقَّى إلى **pgTAP حقيقية** (ok/throws_ok متعددة، وليست placeholder).
+
+### 1) Rate limiting (Upstash Redis)
+- [x] إضافة تبعيات `@upstash/ratelimit` + `@upstash/redis` إلى `package.json`.
+- [ ] إضافة متغيرات بيئة جديدة `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` — **يحتاج المستخدم إنشاء حساب Upstash وتعبئة القيم الفعلية في `.env.local` بنفسه**؛ بدونها `lib/rate-limit.ts` يسمح بكل الطلبات (fail-open موثَّق) بدل تعطيل المسارات العامة كاملة في التطوير المحلي.
+- [x] `lib/rate-limit.ts` جديد: عميل Upstash + 3 مثيلات `Ratelimit` (publicWrite: 5/60s، qrScan: 20/60s، loyaltyReceipt: 5/5m) + دالة `clientIp()` عبر `headers()` من `next/headers` (`x-forwarded-for`/`x-real-ip`).
+- [x] تطبيق الحد في server actions التالية (فحص IP قبل أي كتابة، رسالة خطأ معرَّبة `common.rateLimited` عند التجاوز بنفس نمط أخطاء zod الحالي):
+  - `submitPublicReservation` — `lib/actions/public-reservation.actions.ts`
+  - `submitInquiry` — `lib/actions/public-inquiry.actions.ts`
+  - `submitComplaint` — `lib/actions/complaint.actions.ts`
+  - `submitRating` — `lib/actions/rating.actions.ts`
+  - `submitLoyaltyReceipt` — `lib/actions/loyalty-member.actions.ts`
+  - `recordQrScan` — `lib/actions/qr-scan.actions.ts` (best-effort، لا يُرجع خطأ، يتجاهل بصمت عند التجاوز)
+
+### 2) Security headers (`next.config.ts`)
+- [x] `async headers()` في `next.config.ts`: CSP (`script-src` يستثني `unsafe-eval` في الإنتاج فقط، `frame-src https://www.google.com` لخريطة `EntryGateway`، `img-src`/`connect-src` يشملان `*.supabase.co`)، `X-Frame-Options: SAMEORIGIN`، `X-Content-Type-Options: nosniff`، `Referrer-Policy: strict-origin-when-cross-origin`، `Strict-Transport-Security`.
+
+### 3) اختبارات RLS حقيقية (pgTAP)
+- [x] `supabase/tests/loyalty_rls_test.sql` — 10 سيناريوهات فعلية (`set_config('request.jwt.claims', ...)` + `set local role`) تغطي القراءة العامة لـ`settings`/`tiers`/المكافآت النشطة فقط، عزل `loyalty_members` (عضو/عضو آخر/موظف/موظف مطعم آخر)، RPCs الثلاث (`join_loyalty_member`, `submit_loyalty_receipt`, `redeem_loyalty_reward` مع رفض رصيد غير كافٍ).
+- [x] `supabase/tests/reservation_preorder_items_rls_test.sql` — 6 سيناريوهات (إدراج/قراءة/حذف ضمن النطاق، رفض إدراج خارج الفرع، رفض قراءة عبر مطعم آخر).
+- [x] `supabase/tests/menu_item_view_events_rls_test.sql` — 4 سيناريوهات (إدراج anon، رفض قراءة anon، قراءة موظف نفس الفرع، رفض موظف فرع آخر).
+- **ملاحظة مهمة (لم تُنفَّذ فعلياً)**: هذه البيئة لا تملك Docker/pgtap محلي (نفس القيد الموثَّق في الملفات الخمسة السابقة) — الملفات الثلاثة مكتوبة وفق قواعد pgtap الصحيحة ومطابقة لمخطط الهجرات الفعلي (تحققتُ من كل عمود/سياسة/توقيع RPC بالقراءة المباشرة)، لكن **لم تُشغَّل فعلياً للتأكد من نجاحها**. يحتاج المستخدم تشغيلها عبر `supabase test db` أو psql متصل بقاعدة تجريبية فيها امتداد pgtap قبل الاعتماد عليها في CI.
+
+### التحقق
+- [x] `npm run build` + `npm run lint` — كلاهما نظيف (0 أخطاء/تحذيرات)
+- [x] لا هجرة قاعدة بيانات جديدة في هذه المرحلة (rate limiting وheaders كود تطبيق فقط، واختبارات RLS ملفات SQL منفصلة لا تُغيّر schema)
+
+## المرحلة III — جاهزية تشغيلية (Operational Readiness) (خطة `shimmering-swimming-hummingbird.md`)
+
+مرجع: `C:\Users\HP\.claude\plans\shimmering-swimming-hummingbird.md`. قرار المستخدم: تثبيت Sentry فعلياً الآن (وليس تأجيله).
+
+### 1) صفحات خطأ مخصّصة (بلغتين، عبر next-intl حيث ممكن)
+ملاحظة مهمة من `node_modules/next/dist/docs`: نسخة Next هذه تستخدم prop اسمه **`retry`** في `error.tsx`/`global-error.tsx` (وليس `reset` كما في التوثيق القديم المعتاد).
+- [x] `app/global-error.tsx` — يلتقط فشل `RootLayout` نفسه؛ يحوي `<html>/<body>` خاصين به (بلا next-intl)، نص عربي/إنجليزي ثابت، زر إعادة محاولة (`retry()`), يرسل الخطأ لـSentry.
+- [x] `app/error.tsx` — حدود خطأ عامة لبقية الشجرة (`(app)` والمسارات بلا `error.tsx` خاص)، `'use client'`، `useTranslations`، يرسل الخطأ لـSentry عبر `useEffect`.
+- [x] `app/not-found.tsx` — Server Component عبر `getTranslations`.
+- [x] `app/(public)/m/[branchSlug]/t/[qrToken]/error.tsx` — حدّ خطأ مخصّص لتجربة الضيف، namespace `publicMenu.error`.
+- [x] مفاتيح ترجمة جديدة: قسم `errors` في `common.json` (ar/en)، ومفاتيح `error` في `publicMenu.json` (ar/en).
+
+### 2) تكامل Sentry
+- [x] `npm install @sentry/nextjs` (نسخة `^10.75.0`، بحثت عن الإعداد الحالي المتوافق مع Next 16 عبر التوثيق الرسمي قبل الكتابة).
+- [x] ملفات الإعداد: `instrumentation.ts` (+ `onRequestError`)، `instrumentation-client.ts`، `sentry.server.config.ts`، `sentry.edge.config.ts` — DSN من `SENTRY_DSN`/`NEXT_PUBLIC_SENTRY_DSN`، **fail-open بلا DSN** (سلوك افتراضي في SDK، بلا منطق يدوي إضافي)، `tracesSampleRate: 0` عمداً (Error tracking فقط، بلا performance tracing/Replay — تبسيطاً وتجنباً لتكلفة/تعقيد غير مطلوب).
+- [x] ربط `Sentry.captureException(error)` داخل `app/error.tsx`، `app/global-error.tsx`، وحد خطأ مسار الضيف.
+- [x] `.env.local` المحلي: أُضيفت مفاتيح `SENTRY_DSN`/`NEXT_PUBLIC_SENTRY_DSN` فارغة مع تعليق توضيحي (fail-open) — **لم يُضَف DSN حقيقي** (يحتاج حساب Sentry فعلي من المستخدم).
+- **قرار مسجَّل**: لم أُغلِّف `next.config.ts` بـ`withSentryConfig` (يتطلب `org`/`project`/`SENTRY_AUTH_TOKEN` لرفع source maps؛ بلا هذه القيم تبقى الأخطاء تُلتقَط لكن بـstack traces مصغّرة/minified). موثَّق في README كخطوة لاحقة اختيارية.
+
+### 3) توثيق/تفعيل استراتيجية Backup
+- [x] قسم جديد في `README.md`: الاعتماد على نسخ Supabase التلقائية اليومية (+PITR على خطط Pro)، طريقة الاستعادة من لوحة Supabase، وأمر `pg_dump` يدوي عبر `DATABASE_URL` الموجود أصلاً.
+
+### 4) CI بسيط
+- [x] `.github/workflows/ci.yml`: عند push/PR إلى `main` — `npm ci`، `npm run lint`، `npm run build`، `npm test` (Node 24، مطابق للبيئة المحلية).
+- [x] تحقّقت فعلياً (بإزالة `.env.local` مؤقتاً وتشغيل `npm run build`) أن البناء **لا يحتاج أي متغير بيئة** — كل المسارات `ƒ` (ديناميكية/server-rendered on demand)، لا صفحة تُبنى ثابتاً تستدعي Supabase وقت البناء. لذا **لا حاجة لإضافة GitHub Secrets** لنجاح الـCI.
+
+### التحقق
+- [x] `npm run build` + `npm run lint` + `npm test` — الثلاثة نظيفة بعد كل التغييرات.
+- [x] `npx next typegen` نظيف (بلا مسارات جديدة فعلياً تحتاجه، لكن تحقّق إضافي).
+- [x] لا هجرة قاعدة بيانات في هذه المرحلة.
+- [x] لم يُدفَع أي شيء لـ GitHub بعد ولم يُفعَّل CI فعلياً (لا push تم تنفيذه) — الـworkflow جاهز محلياً فقط، سيعمل تلقائياً بمجرد push للفرع `main`.
+
+### مراجعة (Review) — المرحلة III ✅ (منجزة 2026-09-16)
+
+**ما تغيّر:**
+- 4 ملفات جديدة لحدود الأخطاء (`app/global-error.tsx`, `app/error.tsx`, `app/not-found.tsx`, `app/(public)/m/[branchSlug]/t/[qrToken]/error.tsx`) بدل صفحات Next الافتراضية القبيحة/الصامتة سابقاً — الآن كل خطأ غير متوقّع (سواء في لوحة التحكم أو تجربة ضيف QR) يعرض رسالة معرَّبة واضحة بدل شاشة بيضاء أو "Application error" الافتراضية.
+- Sentry مثبَّت وموصول فعلياً (server/edge/client + حدود الأخطاء الثلاث) بنمط fail-open مطابق تماماً لقرار Upstash السابق — لا شيء يُرسَل ولا شيء ينكسر بدون DSN حقيقي.
+- `README.md` تحوّل من قالب `create-next-app` الافتراضي الفارغ إلى توثيق فعلي لمتغيرات البيئة، استراتيجية Backup، وCI — أول توثيق تشغيلي حقيقي للمشروع.
+- `.github/workflows/ci.yml` جاهز وسيعمل تلقائياً من أول push بعد الدمج، بلا حاجة لأي إعداد Secrets إضافي (تحقّقتُ عملياً لا نظرياً).
+
+**قرار يستحق التوضيح:** اخترت عدم تفعيل `tracesSampleRate` أو `withSentryConfig` (source maps) لتقليل المساحة المُضافة لأقل قدر يحقق الهدف المطلوب فعلياً (التقاط الأخطاء) — كلاهما قابل للتفعيل لاحقاً بسطر واحد إن احتجت أداء/traces حقيقية بدون أي إعادة هيكلة.
+
+**متبقٍ عليك (يدوي، خارج نطاق ما يمكنني فعله):**
+1. إنشاء حساب/مشروع Sentry فعلي وتعبئة `SENTRY_DSN`/`NEXT_PUBLIC_SENTRY_DSN` الحقيقيين في `.env.local` (وفي أي بيئة نشر لاحقاً) لتفعيل المراقبة فعلياً.
+2. Push هذا الفرع لـGitHub لتفعيل الـCI فعلياً لأول مرة والتأكد أنه يمر (اختبرته محلياً فقط).
+3. لم أفتح أي صفحة خطأ بمتصفح حي (لا أداة Headless متاحة هذه الجلسة) — يُنصح بتجربة رابط QR غير موجود (يفعّل `app/not-found.tsx`) ورابط لوحة تحكم غير موجود، للتأكد من المظهر البصري.
+
+## المرحلة IV — تحسينات جودة الكود (بلا تغيير وظيفي) (خطة `shimmering-swimming-hummingbird.md`)
+
+مرجع: `C:\Users\HP\.claude\plans\shimmering-swimming-hummingbird.md`. بحث استكشافي أولي وجد **8** مكوّنات `*ListTable*` (النص الأصلي ذكر 6) — قرار المستخدم: استخلاص من كل الـ8. وقرار المستخدم: تنفيذ RPC ذرّية لـ`replaceItemChildren`/`replacePreorderItems` ضمن هذه الدفعة (لا سابقة مطابقة في المشروع بهذا النمط — migration جديدة + إعادة كتابة server actions).
+
+### 1) مكوّن `DataListTable` عام (من 8 ملفات: Branches, Menus, Tables, Inquiries, Complaints, Items, Reservations, EventReservations)
+- [ ] استخلاص `hooks/useBranchOptions.ts` (دالة dedupe branchId→branchName عبر `Map`، مكرَّرة حرفياً في 7 من 8 ملفات)
+- [ ] استخلاص `hooks/useDateRangeFilter.ts` (منطق `dateFrom`/`dateTo` → `fromTime`/`toTime` بـ`+24h`، مكرَّر حرفياً بين Reservations وEventReservations)
+- [ ] استخلاص مكوّن `components/shared/ListFilterBar.tsx` (شريط بحث + Select فرع "كل الفروع" المكرَّر في 6 ملفات)
+- [ ] استخلاص مكوّن `components/shared/ListTableShell.tsx` (نمط: حالة فارغة `<p>{t("common.noResults")}</p>` مقابل `<Table>` مع صف `<Link>`) — يُستخدم في 7 ملفات (كل شيء عدا Items التي هي شبكة بطاقات وليست جدولاً؛ تُستخدم لها فقط `useBranchOptions`/`ListFilterBar` بلا `ListTableShell`)
+- [ ] تحديث الملفات الثمانية لاستخدام الاستخلاصات الجديدة بدل الكود المكرَّر، بلا أي تغيير في السلوك الظاهر (نفس الفلاتر/الترتيب/الروابط)
+
+### 2) طبقة ترجمة أخطاء DB موحّدة
+- [ ] `lib/i18n/db-errors.ts` جديد: دالة `translateDbError(error, locale)` تُرجع رسالة معرَّبة عامة حسب نوع الخطأ الشائع (RLS/`23505` تكرار/`23503` مفتاح أجنبي/افتراضي عام)، بنفس نمط `action-messages.ts` الحالي (مفاتيح جديدة في `messages/{ar,en}/actions.json` تحت `db.*`)
+- [ ] استبدال الـ36 موضع `error.message`/`error?.message` الخام عبر 16 ملف actions (`item`, `branch`, `category`, `menu`, `table`, `reservation`, `event-reservation`, `inquiry`, `complaint`, `rating`, `restaurant`, `public-inquiry`, `public-reservation`, `public-event-reservation`, `loyalty`, `loyalty-member`) بنداءات `translateDbError`
+
+### 3) RPC ذرّية لاستبدال العلاقات الفرعية (معاملة DB حقيقية)
+- [ ] Migration جديدة (رقم تالٍ لآخر هجرة مطبَّقة) — دالة `replace_item_children(...)` (security definer، بنفس نمط `bootstrap_restaurant`/`redeem_loyalty_reward_for_member`: تعليق عربي يوضّح الغرض، `revoke all`/`grant execute to authenticated`، تحقّق من ملكية الفرع/الصلاحية داخل الدالة) تُنفّذ حذف+إدراج الفئات/variants/option groups+values/allergens للصنف بمعاملة واحدة ذرّية
+- [ ] دالة مشابهة `replace_preorder_items(...)` لنفس النمط في `preorder.actions.ts`
+- [ ] إعادة كتابة `replaceItemChildren` (`lib/actions/item.actions.ts`) و`replacePreorderItems` (`lib/actions/preorder.actions.ts`) لاستدعاء `supabase.rpc(...)` الجديد بدل السلسلة الحالية من عمليات delete/insert منفصلة
+- [ ] `lib/supabase/types.ts`: إضافة الدالتين الجديدتين إلى `Functions`
+- [ ] تحديث `supabase/tests/menu_catalog_rls_test.sql` (أو ملف جديد) إن لزم لتغطية RPC الجديدة
+
+### 4) استخلاص hooks من `ItemForm.tsx`/`ReservationForm.tsx`
+- [ ] `hooks/useActionFormSubmit.ts` — تجريد نمط `isPending`/`startTransition`/`toast` المكرَّر حرفياً في النموذجين (وربما نماذج أخرى)
+- [ ] `hooks/useVariantsFieldArray.ts` (من `ItemForm.tsx`) لتغليف `useFieldArray` الخاص بـ`variants`
+- [ ] `hooks/useOptionGroupsFieldArray.ts` (من `ItemForm.tsx`) لتغليف `optionGroups` + `OptionGroupValues` المتداخل
+- [ ] `hooks/usePreorderItemsFieldArray.ts` (من `ReservationForm.tsx`) لتغليف `preorderItems` + منطق إعادة الضبط المتسلسل (`setValue` عند تغيير الصنف) + حساب `candidates`/`secondItem` لنصف/نصف
+- [ ] نقل `getHalfHalfCandidates` (حالياً محلية في `ReservationForm.tsx`) إلى `lib/domain/` بجانب توأمها الخادمي `validateHalfHalfItems` في `preorder.actions.ts` (منطق عمل مكرَّر بين العميل والخادم)
+- [ ] تحديث `ItemForm.tsx`/`ReservationForm.tsx` لاستخدام الـhooks الجديدة، بلا أي تغيير في السلوك الظاهر
+
+### التحقق
+- [ ] `npm run build` + `npm run lint` + `npm test` نظيفة بعد كل بند
+- [ ] الهجرة الجديدة (بند 3) تُطبَّق فعلياً على القاعدة الحية بعد تأكيد المستخدم (نفس نمط كل هجرة سابقة)
+- [ ] تحقق يدوي/سكربت Node مؤقت أن `replace_item_children`/`replace_preorder_items` تُنتج نفس النتيجة النهائية للبيانات كالكود القديم (قبل حذفه)، مع اختبار سلبي: فشل جزئي متعمَّد (مثلاً قيمة غير صالحة) لا يترك بيانات ناقصة (rollback كامل)
+
+## المرحلة V — استغلال البيانات المجمَّعة (خطة `shimmering-swimming-hummingbird.md`)
+
+مرجع: `C:\Users\HP\.claude\plans\shimmering-swimming-hummingbird.md`. نُفِّذت مباشرة بطلب المستخدم قبل إكمال المرحلة IV (لا تعارض — ملفات مستقلة تماماً).
+
+- [x] صفحة `/analytics` جديدة (`app/(app)/analytics/page.tsx`) — Server Component يقرأ مباشرة من `qr_scan_events`/`menu_item_view_events` الموجودتين أصلاً منذ المرحلتين 6/13، بلا أي migration جديدة
+- [x] 3 بطاقات إحصاء (`StatCard` الموجود مسبقاً): مسح QR، مشاهدات الأصناف، عدد الأصناف التي شوهدت — لآخر 30 يوماً
+- [x] جدول "الأكثر مشاهدة" (Top 10 صنف حسب عدد المشاهدات، مع اسم الفرع)
+- [x] رسم "ذروة الأوقات" (توزيع المسح+المشاهدات على 24 ساعة، كل حدث محسوب بالتوقيت المحلي لفرعه عبر `Intl.DateTimeFormat` + عمود `branches.timezone` الموجود، بلا مكتبة رسوم بيانية إضافية)
+- [x] رابط تنقّل جديد `nav.analytics` في `SidebarNavContent.tsx` + ترجمات (`messages/{ar,en}/analytics.json` كـnamespace جديد مسجَّل في `i18n/request.ts`)
+- [x] `npm run build` + `npm run lint` نظيفة
+
+### مراجعة (Review) — المرحلة V ✅ (منجزة 2026-09-17)
+
+- **لا فلترة حسب فرع في الواجهة**: تجميع الأرقام عبر كل فروع المطعم دفعة واحدة (RLS تُقيّد النتائج أصلاً لفروع المستخدم عبر `auth_branch_ids()`)، مع عرض اسم الفرع في عمود منفصل بجدول "الأكثر مشاهدة" لتمييز الأصناف عند تعدد الفروع. لا حاجة لفلتر إضافي الآن طالما الهدف "لوحة بسيطة" حسب نص الخطة الأصلية؛ فلتر فرع صريح يستحق بند منفصل لاحقاً إن طلبه المستخدم.
+- **الأسماء تُعرض بالعربي دائماً (`name_ar`)** بغضّ النظر عن لغة الواجهة الحالية — نفس نمط `ReservationsListTable`/`reservations/page.tsx` الموجود مسبقاً بالضبط (لا شاشة إدارة حالية تُبدّل اسم الفرع/الصنف حسب لغة الواجهة)، فلم أُدخل سلوكاً جديداً هنا.
+- **حد `5000` صف لكل جدول أحداث** (`EVENT_ROW_LIMIT`) لتفادي جلب غير محدود مع نمو البيانات — كافٍ حالياً (مطعم بفرع واحد فعلي، حجم بيانات ضئيل)، يستحق مراجعة لاحقاً (تجميع SQL بدل جلب صفوف خام) إن كبر عدد الأحداث الشهرية بشكل ملحوظ.
+- **`eslint-plugin-react-hooks` يرفض `Date.now()` مباشرة** حتى داخل Server Component غير تفاعلي (يُعامله كمكوّن React عادي لأن اسمه يبدأ بحرف كبير ويُرجع JSX) — الحل: `new Date()` + `setDate()` بدل حساب فرق الميلي ثانية يدوياً؛ نفس القيد يستحق تسجيله في `~/.claude/learnings/frontend.md` إن تكرر.
+- **لم أُنفّذ المرحلة IV** (استخلاص `DataListTable`/hooks/RPC ذرّية) قبل هذه — طلب المستخدم صراحة تنفيذ المرحلة V أولاً، ولا تعارض لأنها تلمس ملفات جديدة بالكامل.

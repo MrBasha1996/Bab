@@ -19,6 +19,7 @@ const NAMESPACES = [
   "inquiries",
   "complaints",
   "site",
+  "analytics",
 ] as const;
 
 function deepMerge(

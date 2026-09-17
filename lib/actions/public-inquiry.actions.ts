@@ -1,12 +1,14 @@
 "use server";
 import { createClient } from "@/lib/supabase/server";
-import { invalidDataError } from "@/lib/i18n/action-messages";
+import { invalidDataError, rateLimitedError } from "@/lib/i18n/action-messages";
+import { isRateLimited } from "@/lib/rate-limit";
 import { inquirySchema, type InquiryInput } from "@/lib/validation/inquiry.schema";
 import type { ActionResult } from "@/lib/actions/types";
 
 export async function submitInquiry(input: InquiryInput): Promise<ActionResult> {
   const parsed = inquirySchema.safeParse(input);
   if (!parsed.success) return { success: false, error: await invalidDataError() };
+  if (await isRateLimited("publicWrite")) return { success: false, error: await rateLimitedError() };
 
   const supabase = await createClient();
   const { error } = await supabase.from("inquiries").insert({
