@@ -80,11 +80,11 @@ export async function EntryGateway({
         )}
 
         <div className="grid gap-1.5">
-          <p className="text-current/60 text-xs font-semibold uppercase tracking-widest">
+          <p className="text-current/80 text-xs font-semibold uppercase tracking-widest">
             {t("welcomeTitle")}
           </p>
           <h1 className="font-display text-3xl font-bold sm:text-4xl">{name}</h1>
-          <p className="text-current/70 text-sm flex items-center justify-center gap-2">
+          <p className="text-current/85 text-sm flex items-center justify-center gap-2">
             <MapPin className="size-3.5 text-primary" />
             {branchName}
           </p>
@@ -98,7 +98,7 @@ export async function EntryGateway({
           {t("tableLabel")}: <span className="text-primary">{tableLabel}</span>
         </div>
 
-        <p className="text-current/50 mt-2 text-xs">{t("scanPrompt")}</p>
+        <p className="text-current/70 mt-2 text-xs">{t("scanPrompt")}</p>
       </header>
 
       {/* ====== Action cards ====== */}

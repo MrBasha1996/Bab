@@ -86,9 +86,13 @@
     "viewAll": "View all",
     "noActivity": "No recent activity yet",
     "weeklyReservations": "Weekly reservations",
-    "topItems": "Top items",
+    "weeklyReservationsDesc": "Last 7 days",
+    "topItems": "Most viewed items",
+    "topItemsDesc": "Based on guest engagement with images",
     "branchPerformance": "Branch performance",
     "tip": "Tip of the day",
-    "tipBody": "Enable the loyalty points system from the Loyalty page to increase repeat customers."
+    "tipBody": "Enable the loyalty points system from the Loyalty page to increase repeat customers.",
+    "noTopItems": "No data yet",
+    "viewAllItems": "View all items"
   }
 }

@@ -283,7 +283,7 @@
   background: linear-gradient(
     to var(--gradient-dir, right),
     transparent,
-    color-mix(in srgb, var(--brand-accent) 50%, transparent),
+    color-mix(in srgb, var(--brand-accent) 80%, transparent),
     transparent
   );
   max-width: 8rem;

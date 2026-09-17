@@ -14,6 +14,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Sparkles,
+  Eye,
 } from "lucide-react";
 import { requireProfile } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
@@ -22,6 +23,8 @@ import { RestaurantOnboardingForm } from "@/components/restaurant/RestaurantOnbo
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { StatCard } from "@/components/ui/stat-card";
+import { BarChart, type BarDatum } from "@/components/ui/charts/BarChart";
+import { RankList, type RankItem } from "@/components/ui/charts/RankList";
 import type { Locale } from "@/i18n/request";
 
 function greetingKey(locale: string): string {
@@ -189,6 +192,81 @@ export default async function DashboardPage() {
   ]
     .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
     .slice(0, 5);
+
+  // Weekly reservations chart data (last 7 days)
+  const weekStart = new Date();
+  weekStart.setHours(0, 0, 0, 0);
+  weekStart.setDate(weekStart.getDate() - 6);
+  const weekStartStr = weekStart.toISOString();
+  const { data: weeklyReservations } = await supabase
+    .from("reservations")
+    .select("reservation_time")
+    .gte("reservation_time", weekStartStr);
+
+  const dayLabelsAr = ["أحد", "إثن", "ثلا", "أرب", "خمي", "جمع", "سبت"];
+  const dayLabelsEn = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const dayLabels = isAr ? dayLabelsAr : dayLabelsEn;
+
+  // Build a 7-bucket array ending today
+  const weeklyData: BarDatum[] = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(weekStart);
+    d.setDate(weekStart.getDate() + i);
+    const dayIdx = d.getDay();
+    weeklyData.push({
+      label: dayLabels[dayIdx],
+      value: 0,
+      hint: d.toISOString().slice(0, 10),
+    });
+  }
+  for (const r of weeklyReservations ?? []) {
+    const rDate = new Date(r.reservation_time);
+    rDate.setHours(0, 0, 0, 0);
+    const diffDays = Math.floor((rDate.getTime() - weekStart.getTime()) / 86400000);
+    if (diffDays >= 0 && diffDays < 7) {
+      weeklyData[diffDays].value += 1;
+    }
+  }
+
+  // Top items (most viewed from menu_item_view_events)
+  const since = new Date();
+  since.setDate(since.getDate() - 30);
+  const sinceStr = since.toISOString();
+  const { data: viewEvents } = await supabase
+    .from("menu_item_view_events")
+    .select("menu_item_id, created_at")
+    .gte("created_at", sinceStr);
+
+  // Aggregate counts per menu_item_id
+  const viewCounts = new Map<string, number>();
+  for (const e of viewEvents ?? []) {
+    viewCounts.set(e.menu_item_id, (viewCounts.get(e.menu_item_id) ?? 0) + 1);
+  }
+  const topItemIds = Array.from(viewCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([id]) => id);
+
+  let topItems: RankItem[] = [];
+  if (topItemIds.length > 0) {
+    const { data: topItemsData } = await supabase
+      .from("menu_items")
+      .select("id, name_ar, name_en, image_url")
+      .in("id", topItemIds);
+    topItems = topItemIds
+      .map((id) => {
+        const item = topItemsData?.find((i) => i.id === id);
+        if (!item) return null;
+        return {
+          id: item.id,
+          label: isAr ? item.name_ar : item.name_en,
+          value: viewCounts.get(id) ?? 0,
+          imageUrl: item.image_url ?? null,
+        } as RankItem;
+      })
+      .filter(Boolean) as RankItem[];
+  }
+  const totalViews = (viewEvents ?? []).length;
 
   return (
     <div className="bg-arabesque min-h-full">
@@ -360,6 +438,55 @@ export default async function DashboardPage() {
               </CardContent>
             </Card>
           </div>
+        </section>
+
+        {/* Two-column: Weekly chart + Top items */}
+        <section className="grid gap-4 lg:grid-cols-2">
+          {/* Weekly BarChart */}
+          <Card>
+            <CardContent className="grid gap-3 p-5">
+              <div className="flex items-center justify-between gap-2">
+                <div className="grid gap-0.5">
+                  <h3 className="font-display text-base font-bold flex items-center gap-2">
+                    <TrendingUp className="size-4 text-primary" />
+                    {t("weeklyReservations")}
+                  </h3>
+                  <p className="text-muted-foreground text-xs">{t("weeklyReservationsDesc")}</p>
+                </div>
+                <span className="bg-primary/10 text-primary rounded-full px-2.5 py-0.5 text-xs font-bold">
+                  {weeklyData.reduce((s, d) => s + d.value, 0)}
+                </span>
+              </div>
+              <BarChart data={weeklyData} height={180} highlightLast />
+            </CardContent>
+          </Card>
+
+          {/* Top items RankList */}
+          <Card>
+            <CardContent className="grid gap-3 p-5">
+              <div className="flex items-center justify-between gap-2">
+                <div className="grid gap-0.5">
+                  <h3 className="font-display text-base font-bold flex items-center gap-2">
+                    <Eye className="size-4 text-primary" />
+                    {t("topItems")}
+                  </h3>
+                  <p className="text-muted-foreground text-xs">{t("topItemsDesc")}</p>
+                </div>
+                <Button asChild variant="link" size="sm" className="text-xs">
+                  <Link href="/items">{t("viewAllItems")}</Link>
+                </Button>
+              </div>
+              <RankList
+                items={topItems}
+                totalLabel={
+                  isAr
+                    ? `إجمالي ${totalViews} مشاهدة خلال آخر ٣٠ يومًا`
+                    : `${totalViews} total views in the last 30 days`
+                }
+                emptyLabel={t("noTopItems")}
+              />
+            </CardContent>
+          </Card>
         </section>
       </div>
     </div>

@@ -36,10 +36,10 @@ export async function MenuHeader({ resolved, tablet = false }: { resolved: Resol
             <h1 className={`font-display font-bold leading-tight ${tablet ? "text-2xl" : "text-lg"}`}>
               {name}
             </h1>
-            <span className={`flex items-center gap-1.5 text-current/70 ${tablet ? "text-sm" : "text-xs"}`}>
+            <span className={`flex items-center gap-1.5 text-current/85 ${tablet ? "text-sm" : "text-xs"}`}>
               <MapPin className="size-3.5 text-primary" />
               {branchName}
-              <span className="text-current/30">•</span>
+              <span className="text-current/50">•</span>
               <UtensilsCrossed className="size-3 text-primary" />
               {t("table", { label: tableLabel })}
             </span>
