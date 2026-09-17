@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cairo, Inter } from "next/font/google";
+import { Cairo, Inter, Tajawal } from "next/font/google";
 import { Direction } from "radix-ui";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
@@ -19,6 +19,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  weight: ["400", "500", "700", "800", "900"],
+  subsets: ["arabic", "latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Digital Menu",
   description: "Digital Menu Platform",
@@ -26,8 +33,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FAFAF8" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A0B0F" },
+    { media: "(prefers-color-scheme: light)", color: "#FAF0E6" },
+    { media: "(prefers-color-scheme: dark)", color: "#1A1210" },
   ],
 };
 
@@ -39,7 +46,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={dir}
-      className={`${cairo.variable} ${inter.variable} h-full antialiased`}
+      className={`${cairo.variable} ${inter.variable} ${tajawal.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans">
