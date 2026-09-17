@@ -65,6 +65,18 @@ pg_dump "$DATABASE_URL" -f backup-$(date +%Y%m%d).sql
 
 Restore with `psql "$DATABASE_URL" -f backup-YYYYMMDD.sql` against a fresh database — never against the live one.
 
+## End-to-end tests (Playwright)
+
+`npm run test:e2e` runs 4 browser-driven tests against a running dev server (`playwright.config.ts` starts `npm run dev` automatically, or reuses one already running locally, e.g. on a different port via `PLAYWRIGHT_BASE_URL`): public reservation submission, QR menu browsing, admin login + reservation creation, and a partial loyalty receipt-upload test (see below).
+
+Requirements (all read from `.env.local`, same as the app itself):
+
+- A live Supabase project reachable via `DATABASE_URL` / `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` / `SUPABASE_SERVICE_ROLE_KEY` — the suite writes real rows (a test table/QR code, a test loyalty member/user) and never deletes them, so only run it against a dev/staging project, not production, if that matters to you.
+- `scripts/e2e/reset-test-user-password.ts` resets the password of a pre-existing `human-owner@bab.local` staff account (owner role) to a fixed test password — run it once before the first `test:e2e` run, or whenever that account's password needs resetting. It does **not** create the account; it must already exist in Supabase Auth with an `owner`-role `profiles` row.
+- `scripts/e2e/seed.ts` and `scripts/e2e/create-loyalty-session.ts` run automatically from the relevant spec's `test.beforeAll` — no manual step needed for those.
+
+**Why the loyalty test is partial**: there is no dev-bypass for the Google OAuth loyalty sign-in flow. Instead of driving a real Google consent screen, `create-loyalty-session.ts` signs a test user in via `supabase-js` directly and captures the exact cookies `@supabase/ssr` writes, which the test then injects via `context.addCookies` before navigating — reaching the same authenticated state a real Google sign-in would produce. The uploaded receipt image is a synthetic 1x1 PNG (not a real receipt), so the OCR extraction result is intentionally not asserted; the test only checks that the upload completes and a toast (success or rejection) appears, not which one.
+
 ## Continuous Integration
 
 `.github/workflows/ci.yml` runs on every push/PR to `main`: `npm ci`, `npm run lint`, `npm run build`, `npm test`. No repository secrets are required — the build has no static page that reads Supabase env vars, so it succeeds without them.

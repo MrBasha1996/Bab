@@ -733,6 +733,38 @@ export interface Database {
           notes: string | null;
         }[];
       };
+      resolve_branch_public: {
+        Args: { p_branch_slug: string };
+        Returns: {
+          branch_id: string;
+          branch_name_ar: string;
+          branch_name_en: string;
+          restaurant_id: string;
+          restaurant_name_ar: string;
+          restaurant_name_en: string;
+          restaurant_logo_url: string | null;
+        }[];
+      };
+      resolve_table_public: {
+        Args: { p_branch_slug: string; p_qr_token: string };
+        Returns: {
+          restaurant_id: string;
+          restaurant_name_ar: string;
+          restaurant_name_en: string;
+          restaurant_logo_url: string | null;
+          branch_id: string;
+          branch_name_ar: string;
+          branch_name_en: string;
+          branch_timezone: string;
+          branch_slug: string;
+          branch_google_reviews_url: string | null;
+          branch_google_maps_url: string | null;
+          table_id: string;
+          table_label_ar: string;
+          table_label_en: string;
+          qr_code_id: string;
+        }[];
+      };
       create_public_reservation: {
         Args: {
           p_branch_id: string;

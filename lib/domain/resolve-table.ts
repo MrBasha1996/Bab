@@ -1,9 +1,8 @@
 import { createClient } from "@/lib/supabase/server";
 
-// يحل branchSlug + qrToken إلى الفرع/الطاولة عبر عميل anon (استعلامات منفصلة
-// بدل embed-join، بنفس اتفاقية lib/auth/getProfile — النوع اليدوي لـDatabase
-// لا يحمل Relationships الكاملة اللازمة لأنواع embed). يُستخدم من صفحتي
-// QR والـTablet معاً لتجنّب تكرار المنطق.
+// يحل branchSlug + qrToken إلى الفرع/الطاولة عبر resolve_table_public (RPC،
+// راجع 0027_fix_public_resolve_via_rpc.sql). يُستخدم من صفحتي QR والـTablet
+// معاً لتجنّب تكرار المنطق.
 export interface ResolvedTable {
   restaurant: { id: string; nameAr: string; nameEn: string; logoUrl: string | null };
   branch: {
@@ -21,55 +20,28 @@ export interface ResolvedTable {
 
 export async function resolveTable(branchSlug: string, qrToken: string): Promise<ResolvedTable | null> {
   const supabase = await createClient();
-
-  const { data: branch } = await supabase
-    .from("branches")
-    .select("id, restaurant_id, name_ar, name_en, timezone, slug, google_reviews_url, google_maps_url")
-    .eq("slug", branchSlug)
-    .is("deleted_at", null)
-    .single();
-  if (!branch) return null;
-
-  const { data: qr } = await supabase
-    .from("table_qr_codes")
-    .select("id, table_id, branch_id")
-    .eq("qr_token", qrToken)
-    .eq("is_active", true)
-    .single();
-  if (!qr || qr.branch_id !== branch.id) return null;
-
-  const { data: table } = await supabase
-    .from("tables")
-    .select("id, label_ar, label_en")
-    .eq("id", qr.table_id)
-    .is("deleted_at", null)
-    .single();
-  if (!table) return null;
-
-  const { data: restaurant } = await supabase
-    .from("restaurants")
-    .select("id, name_ar, name_en, logo_url")
-    .eq("id", branch.restaurant_id)
-    .single();
-  if (!restaurant) return null;
+  const { data } = await supabase
+    .rpc("resolve_table_public", { p_branch_slug: branchSlug, p_qr_token: qrToken })
+    .maybeSingle();
+  if (!data) return null;
 
   return {
     restaurant: {
-      id: restaurant.id,
-      nameAr: restaurant.name_ar,
-      nameEn: restaurant.name_en,
-      logoUrl: restaurant.logo_url,
+      id: data.restaurant_id,
+      nameAr: data.restaurant_name_ar,
+      nameEn: data.restaurant_name_en,
+      logoUrl: data.restaurant_logo_url,
     },
     branch: {
-      id: branch.id,
-      nameAr: branch.name_ar,
-      nameEn: branch.name_en,
-      timezone: branch.timezone,
-      slug: branch.slug,
-      googleReviewsUrl: branch.google_reviews_url,
-      googleMapsUrl: branch.google_maps_url,
+      id: data.branch_id,
+      nameAr: data.branch_name_ar,
+      nameEn: data.branch_name_en,
+      timezone: data.branch_timezone,
+      slug: data.branch_slug,
+      googleReviewsUrl: data.branch_google_reviews_url,
+      googleMapsUrl: data.branch_google_maps_url,
     },
-    table: { id: table.id, labelAr: table.label_ar, labelEn: table.label_en },
-    qrCodeId: qr.id,
+    table: { id: data.table_id, labelAr: data.table_label_ar, labelEn: data.table_label_en },
+    qrCodeId: data.qr_code_id,
   };
 }

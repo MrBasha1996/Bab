@@ -9,27 +9,22 @@ export interface ResolvedBranch {
   branch: { id: string; nameAr: string; nameEn: string };
 }
 
+// يستدعي resolve_branch_public (RPC، راجع 0027_fix_public_resolve_via_rpc.sql)
+// بدل قراءة مباشرة من branches/restaurants — سياسات RLS العامة على هذين
+// الجدولين مقيَّدة بدور anon فقط، فعميل ولاء مسجّل دخوله فعلياً (دور
+// authenticated غير موظف) لا يرى أي صف عبرها ويحصل دائماً على null/404.
 export async function resolveBranch(branchSlug: string): Promise<ResolvedBranch | null> {
   const supabase = await createClient();
-
-  const { data: branch } = await supabase
-    .from("branches")
-    .select("id, restaurant_id, name_ar, name_en")
-    .eq("slug", branchSlug)
-    .is("deleted_at", null)
-    .single();
-  if (!branch) return null;
-
-  const { data: restaurant } = await supabase
-    .from("restaurants")
-    .select("name_ar, name_en, logo_url")
-    .eq("id", branch.restaurant_id)
-    .single();
-  if (!restaurant) return null;
+  const { data } = await supabase.rpc("resolve_branch_public", { p_branch_slug: branchSlug }).maybeSingle();
+  if (!data) return null;
 
   return {
-    restaurantId: branch.restaurant_id,
-    restaurant: { nameAr: restaurant.name_ar, nameEn: restaurant.name_en, logoUrl: restaurant.logo_url },
-    branch: { id: branch.id, nameAr: branch.name_ar, nameEn: branch.name_en },
+    restaurantId: data.restaurant_id,
+    restaurant: {
+      nameAr: data.restaurant_name_ar,
+      nameEn: data.restaurant_name_en,
+      logoUrl: data.restaurant_logo_url,
+    },
+    branch: { id: data.branch_id, nameAr: data.branch_name_ar, nameEn: data.branch_name_en },
   };
 }

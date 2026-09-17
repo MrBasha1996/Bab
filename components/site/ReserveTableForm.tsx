@@ -231,22 +231,24 @@ export function ReserveTableForm({ branches }: { branches: { id: string; label: 
             </FormItem>
             <FormItem>
               <FormLabel>{t("time")}</FormLabel>
-              <Select
-                value={selectedTime}
-                onChange={(e) => {
-                  setSelectedTime(e.target.value);
-                  applyDateTime(selectedDate, e.target.value);
-                }}
-              >
-                <option value="" disabled>
-                  {t("selectTime")}
-                </option>
-                {TIME_SLOTS.map((slot) => (
-                  <option key={slot} value={slot}>
-                    {slot}
+              <FormControl>
+                <Select
+                  value={selectedTime}
+                  onChange={(e) => {
+                    setSelectedTime(e.target.value);
+                    applyDateTime(selectedDate, e.target.value);
+                  }}
+                >
+                  <option value="" disabled>
+                    {t("selectTime")}
                   </option>
-                ))}
-              </Select>
+                  {TIME_SLOTS.map((slot) => (
+                    <option key={slot} value={slot}>
+                      {slot}
+                    </option>
+                  ))}
+                </Select>
+              </FormControl>
             </FormItem>
           </div>
           <FormField
