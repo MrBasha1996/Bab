@@ -17,9 +17,18 @@
   "loyaltyPoints": "{points} loyalty points",
   "gateway": {
     "menu": "Open the menu",
+    "menuDesc": "Browse dishes and add them to your order",
     "complaint": "Complaint or suggestion",
+    "complaintDesc": "We hear you to improve your experience",
     "rating": "Rate your experience",
-    "location": "Find us"
+    "ratingDesc": "Share your feedback in seconds",
+    "location": "Find us",
+    "welcomeTitle": "Welcome to",
+    "tableLabel": "Your table",
+    "branchLabel": "Branch",
+    "scanPrompt": "Choose an option below to start",
+    "loyalty": "Loyalty program",
+    "loyaltyDesc": "Earn points and redeem them for rewards"
   },
   "rating": {
     "title": "Rate your experience",

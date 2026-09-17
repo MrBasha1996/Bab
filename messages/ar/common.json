@@ -52,5 +52,43 @@
     "restaurantSettings": "إعدادات المطعم",
     "openMenu": "فتح القائمة",
     "menu": "القائمة"
+  },
+  "navGroups": {
+    "operations": "العمليات",
+    "catalog": "الكتالوج",
+    "engagement": "التفاعل",
+    "insights": "الرؤى",
+    "settings": "الإعدادات"
+  },
+  "dashboard": {
+    "greetingMorning": "صباح الخير",
+    "greetingAfternoon": "مساء الخير",
+    "greetingEvening": "مساء الخير",
+    "subtitle": "نظرة سريعة على أداء مطعمك اليوم",
+    "statReservationsToday": "حجوزات اليوم",
+    "statActiveTables": "طاولات نشطة",
+    "statMenuItems": "صنف على المنيو",
+    "statNewComplaints": "شكاوى جديدة",
+    "quickActions": "إجراءات سريعة",
+    "quickAddReservation": "حجز جديد",
+    "quickAddReservationDesc": "أضف حجزًا لعميل",
+    "quickAddItem": "صنف جديد",
+    "quickAddItemDesc": "أضف طبقًا للمنيو",
+    "quickViewMenu": "عرض المنيو",
+    "quickViewMenuDesc": "راجع قائمة الأطباق",
+    "quickQRTables": "رموز QR للطاولات",
+    "quickQRTablesDesc": "إدارة طاولاتك ورموزها",
+    "recentActivity": "آخر الأنشطة",
+    "activityNewReservation": "حجز جديد من {name} في {time}",
+    "activityNewComplaint": "شكوى جديدة من طاولة {table}",
+    "activityNewItem": "أُضيف صنف جديد: {item}",
+    "activityNewInquiry": "استفسار جديد من {name}",
+    "viewAll": "عرض الكل",
+    "noActivity": "لا توجد أنشطة حديثة بعد",
+    "weeklyReservations": "حجوزات الأسبوع",
+    "topItems": "الأصناف الأكثر طلبًا",
+    "branchPerformance": "أداء الفروع",
+    "tip": "نصيحة اليوم",
+    "tipBody": "يمكنك تفعيل نظام النقاط من صفحة الولاء لزيادة عودة العملاء."
   }
 }
