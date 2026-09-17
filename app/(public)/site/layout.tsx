@@ -142,7 +142,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/site">) {
               )}
               <span className="font-display text-xl font-bold">{name}</span>
             </Link>
-            <p className="text-current/70 text-sm leading-relaxed">
+            <p className="text-current/80 text-sm leading-relaxed">
               {about ?? tFooter("aboutBody")}
             </p>
             <div className="mt-2 flex items-center gap-2">
@@ -150,7 +150,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/site">) {
                 <a
                   key={idx}
                   href="#"
-                  className="grid size-9 place-items-center rounded-full border border-current/15 text-current/80 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                  className="grid size-9 place-items-center rounded-full border border-current/20 text-current/85 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
                   aria-label="social"
                 >
                   <Icon className="size-4" />
@@ -166,13 +166,13 @@ export default async function SiteLayout({ children }: LayoutProps<"/site">) {
             </span>
             <ul className="grid gap-2 text-sm">
               {site.branches.slice(0, 5).map((branch) => (
-                <li key={branch.id} className="flex items-start gap-2 text-current/70">
+                <li key={branch.id} className="flex items-start gap-2 text-current/80">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
                   <span>{isAr ? branch.nameAr : branch.nameEn}</span>
                 </li>
               ))}
               {site.branches.length === 0 ? (
-                <li className="text-current/50 text-xs">—</li>
+                <li className="text-current/70 text-xs">—</li>
               ) : null}
             </ul>
           </div>
@@ -187,7 +187,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/site">) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-current/70 hover:text-primary w-fit transition-colors"
+                    className="text-current/80 hover:text-primary w-fit transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -201,7 +201,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/site">) {
             <span className="font-display text-sm font-bold uppercase tracking-wider text-primary">
               {tFooter("contactTitle")}
             </span>
-            <ul className="grid gap-2 text-sm text-current/70">
+            <ul className="grid gap-2 text-sm text-current/80">
               {firstPhone ? (
                 <li>
                   <a href={`tel:${firstPhone}`} dir="ltr" className="flex items-center gap-2 transition-colors hover:text-primary">
@@ -220,7 +220,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/site">) {
 
         {/* Bottom bar */}
         <div className="border-t border-current/10">
-          <div className="mx-auto max-w-6xl px-4 py-4 text-center text-xs text-current/50 sm:px-6">
+          <div className="mx-auto max-w-6xl px-4 py-4 text-center text-xs text-current/70 sm:px-6">
             {tFooter("rights", { year: new Date().getFullYear() })}
           </div>
         </div>

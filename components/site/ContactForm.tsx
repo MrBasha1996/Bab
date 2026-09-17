@@ -3,8 +3,9 @@
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
+import { Building, User, Phone, Mail, MessageSquare, Send } from "lucide-react";
 
 import { inquirySchema, type InquiryInput } from "@/lib/validation/inquiry.schema";
 import { submitInquiry } from "@/lib/actions/public-inquiry.actions";
@@ -14,9 +15,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { FormCard } from "@/components/ui/form-card";
+import type { Locale } from "@/i18n/request";
 
 export function ContactForm({ branches }: { branches: { id: string; label: string }[] }) {
   const t = useTranslations("site.contact");
+  const locale = useLocale() as Locale;
+  const isAr = locale === "ar";
   const [isPending, startTransition] = useTransition();
   const form = useForm<InquiryInput>({
     resolver: zodResolver(inquirySchema),
@@ -52,7 +56,10 @@ export function ContactForm({ branches }: { branches: { id: string; label: strin
               name="branchId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t("branch")}</FormLabel>
+                  <FormLabel className="flex items-center gap-2">
+                    <Building className="size-4 text-primary" />
+                    {t("branch")}
+                  </FormLabel>
                   <FormControl>
                     <Select {...field}>
                       {branches.map((b) => (
@@ -67,40 +74,51 @@ export function ContactForm({ branches }: { branches: { id: string; label: strin
               )}
             />
           )}
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t("name")}</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t("phone")}</FormLabel>
-                <FormControl>
-                  <Input {...field} dir="ltr" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="flex items-center gap-2">
+                    <User className="size-4 text-primary" />
+                    {t("name")}
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder={isAr ? "مثال: أحمد محمد" : "e.g. Ahmed Ali"} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="flex items-center gap-2">
+                    <Phone className="size-4 text-primary" />
+                    {t("phone")}
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} dir="ltr" placeholder="+966 5x xxx xxxx" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("email")}</FormLabel>
+                <FormLabel className="flex items-center gap-2">
+                  <Mail className="size-4 text-primary" />
+                  {t("email")}
+                </FormLabel>
                 <FormControl>
-                  <Input {...field} dir="ltr" />
+                  <Input {...field} dir="ltr" placeholder="you@example.com" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -111,9 +129,12 @@ export function ContactForm({ branches }: { branches: { id: string; label: strin
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("subject")}</FormLabel>
+                <FormLabel className="flex items-center gap-2">
+                  <MessageSquare className="size-4 text-primary" />
+                  {t("subject")}
+                </FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input {...field} placeholder={isAr ? "عنوان الرسالة" : "Subject line"} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -124,15 +145,19 @@ export function ContactForm({ branches }: { branches: { id: string; label: strin
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("message")}</FormLabel>
+                <FormLabel className="flex items-center gap-2">
+                  <MessageSquare className="size-4 text-primary" />
+                  {t("message")}
+                </FormLabel>
                 <FormControl>
-                  <Textarea {...field} />
+                  <Textarea {...field} placeholder={isAr ? "اكتب رسالتك هنا…" : "Write your message here…"} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button type="submit" disabled={isPending} className="w-fit">
+            <Send className="size-4" />
             {isPending ? t("submitting") : t("submit")}
           </Button>
         </FormCard>

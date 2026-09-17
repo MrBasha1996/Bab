@@ -267,11 +267,11 @@ export default async function SiteHomePage() {
             <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <a
                 href="#"
-                className="bg-current/5 hover:border-primary inline-flex items-center gap-3 rounded-2xl border border-current/15 px-5 py-3 text-start transition-colors hover:bg-current/10"
+                className="bg-current/5 hover:border-primary inline-flex items-center gap-3 rounded-2xl border border-current/20 px-5 py-3 text-start transition-colors hover:bg-current/10"
               >
                 <Apple className="size-7 text-primary" />
                 <span className="grid">
-                  <span className="text-[10px] uppercase tracking-wider text-current/60">
+                  <span className="text-[10px] uppercase tracking-wider text-current/70">
                     Download on the
                   </span>
                   <span className="font-display text-base font-bold">{t("appStore")}</span>
@@ -279,11 +279,11 @@ export default async function SiteHomePage() {
               </a>
               <a
                 href="#"
-                className="bg-current/5 hover:border-primary inline-flex items-center gap-3 rounded-2xl border border-current/15 px-5 py-3 text-start transition-colors hover:bg-current/10"
+                className="bg-current/5 hover:border-primary inline-flex items-center gap-3 rounded-2xl border border-current/20 px-5 py-3 text-start transition-colors hover:bg-current/10"
               >
                 <Play className="size-7 text-primary" />
                 <span className="grid">
-                  <span className="text-[10px] uppercase tracking-wider text-current/60">
+                  <span className="text-[10px] uppercase tracking-wider text-current/70">
                     Get it on
                   </span>
                   <span className="font-display text-base font-bold">{t("googlePlay")}</span>
@@ -429,7 +429,7 @@ export default async function SiteHomePage() {
           <h2 className="font-display text-3xl font-bold text-balance sm:text-5xl">
             {t("ctaTitle")}
           </h2>
-          <p className="text-current/70 mx-auto max-w-md text-base sm:text-lg">
+          <p className="text-current/85 mx-auto max-w-md text-base sm:text-lg">
             {t("ctaDescription")}
           </p>
           <div className="mt-2 flex justify-center">
